@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Olympiad Competition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #0ea5e9;
+            --accent-hover: #0284c7;
+            --highlight: #f59e0b;
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+            --card-bg: #1e293b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background-color: var(--primary);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* নেভিগেশন বার */
+        nav {
+            background: rgba(15, 23, 42, 0.95);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* হিরো সেকশন */
+        .hero {
+            padding: 60px 5%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .hero-text {
+            flex: 1 1 500px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(14, 165, 233, 0.15);
+            color: var(--accent);
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            border: 1px solid var(--accent);
+        }
+
+        .hero-text h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.6rem;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: var(--accent);
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1.05rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.4);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            background: transparent;
+            color: var(--text-light);
+            padding: 14px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1.05rem;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* ক্লিকযোগ্য ছবির বক্স */
+        .hero-image {
+            flex: 1 1 400px;
+            text-align: center;
+        }
+
+        .hero-image a {
+            display: inline-block;
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 16px;
+            border: 2px solid rgba(56, 189, 248, 0.35);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-image a:hover img {
+            transform: scale(1.02);
+        }
+
+        .img-caption {
+            margin-top: 10px;
+            font-size: 0.95rem;
+            color: #38bdf8;
+        }
+
+        /* সাধারণ সেকশন স্টাইল */
+        section {
+            padding: 50px 5%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 35px;
+            color: #fff;
+        }
+
+        .section-title span {
+            color: var(--accent);
+        }
+
+        /* সময়সূচি ও নোটিশ কার্ড */
+        .schedule-box {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 16px;
+            border-left: 5px solid var(--highlight);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .schedule-box h3 {
+            font-size: 1.5rem;
+            color: var(--highlight);
+            margin-bottom: 12px;
+        }
+
+        .schedule-box p {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .notice-alert {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px dashed var(--highlight);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            color: #fde68a;
+        }
+
+        /* ক্যাটাগরি গ্রিড */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .card .class-tag {
+            display: inline-block;
+            background: #334155;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        /* ভবিষ্যৎ আপডেটের জায়গা */
+        .placeholder-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .placeholder-card {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px dashed rgba(148, 163, 184, 0.4);
+            padding: 25px;
+            border-radius: 14px;
+            text-align: center;
+        }
+
+        .placeholder-card h3 {
+            color: #38bdf8;
+            margin-bottom: 10px;
+        }
+
+        /* ফুটার */
+        footer {
+            text-align: center;
+            padding: 30px 5%;
+            background: #0b1120;
+            margin-top: 50px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 768px) {
+            .hero-text h1 { font-size: 2rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- নেভিগেশন বার -->
+    <nav>
+        <a href="#" class="logo">Science Olympiad</a>
+        <div class="nav-links">
+            <a href="#schedule">সময়সূচি</a>
+            <a href="#categories">ক্যাটাগরি</a>
+            <a href="#study">পড়াশোনা ও সিলেবাস</a>
+            <a href="#prizes">পুরস্কার</a>
+        </div>
+    </nav>
+
+    <!-- মূল ব্যানার সেকশন -->
+    <div class="hero">
+        <div class="hero-text">
+            <span class="badge">বিজ্ঞান মনস্ক প্রজন্ম গড়ার লক্ষ্যে</span>
+            <h1>Science Olympiad Competition</h1>
+            <p>ব্রাইট স্কলার্স সায়েন্স অলিম্পিয়াড — তোমার মেধা ও বিজ্ঞানের জ্ঞান যাচাই করার সেরা সুযোগ! এখনই রেজিস্ট্রেশন করো এবং প্রস্তুতি শুরু করো।</p>
+            
+            <div class="btn-group">
+                <!-- রেজিস্ট্রেশন ফর্ম লিংক -->
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfldm4U0aw1tUw6uSC9WpUgagiD3kBfcrxdNRq9FVN-2qGqIQ/viewform?usp=dialog" target="_blank" class="btn-primary">
+                    এখনই রেজিস্ট্রেশন করো &rarr;
+                </a>
+                <!-- ফেসবুক/অতিরিক্ত লিংক -->
+                <a href="https://www.facebook.com/profile.php?id=61596762776855" target="_blank" class="btn-secondary">
+                    অফিশিয়াল পেজ ভিজিট করুন
+                </a>
+            </div>
+        </div>
+
+        <!-- ক্লিকযোগ্য ছবি: ছবিতে ক্লিক করলে লিংকটি ওপেন হবে -->
+        <div class="hero-image">
+            <a href="https://www.facebook.com/profile.php?id=61596762776855" target="_blank" title="লিংক ভিজিট করতে ক্লিক করুন">
+                <img src="banner.jpg" alt="Science Olympiad Banner">
+            </a>
+            <p class="img-caption">ছবিতে ক্লিক করে লিংক ভিজিট করুন</p>
+        </div>
+    </div>
+
+    <!-- রেজিস্ট্রেশন সময়সূচি সেকশন -->
+    <section id="schedule">
+        <h2 class="section-title">রেজিস্ট্রেশন <span>সময়সূচি ও নিয়মাবলি</span></h2>
+        <div class="schedule-box">
+            <h3>📅 গুরুত্বপূর্ণ তারিখসমূহ ও যোগাযোগ</h3>
+            <p><strong>রেজিস্ট্রেশন শুরু:</strong> ১লা জানুয়ারি</p>
+            <p><strong>রেজিস্ট্রেশন শেষ:</strong> ১৮ই ফেব্রুয়ারি</p>
+            <p><strong>প্রয়োজনে:</strong> 01714906171 (সেন্ড মানি করে রেজিস্ট্রেশন ফি জমা দিন)</p>
+            
+            <div class="notice-alert">
+                <strong>📢 বিশেষ দ্রষ্টব্য:</strong> নির্ধারিত এই সময়ের মধ্যে যারা রেজিস্ট্রেশন সম্পন্ন করবে, অলিম্পিয়াড শুরু হওয়ার ঠিক <strong>১৫ দিন আগে</strong> তাদেরকে পরীক্ষার বিস্তারিত সময়সূচি ও নির্দেশনা জানিয়ে দেওয়া হবে।
+            </div>
+        </div>
+    </section>
+
+    <!-- ক্যাটাগরি সেকশন -->
+    <section id="categories">
+        <h2 class="section-title">প্রতিযোগিতার <span>ক্যাটাগরি</span></h2>
+        <div class="grid-2">
+            <!-- প্রাইমারি ক্যাটাগরি -->
+            <div class="card">
+                <h3>প্রাইমারি ক্যাটাগরি</h3>
+                <span class="class-tag">১ম শ্রেণি থেকে ৫ম শ্রেণি (Class 1 - 5)</span>
+                <p>প্রাথমিক স্তরের শিক্ষার্থীদের বিজ্ঞানভীতি দূর করতে এবং দৈনন্দিন বিজ্ঞানের মজার বিষয়গুলো নিয়ে এই ক্যাটাগরি সাজানো হয়েছে।</p>
+            </div>
+
+            <!-- জুনিয়র ক্যাটাগরি -->
+            <div class="card">
+                <h3>জুনিয়র ক্যাটাগরি</h3>
+                <span class="class-tag">৬ষ্ঠ শ্রেণি থেকে ১০ম শ্রেণি (Class 6 - 10)</span>
+                <p>মাধ্যমিক স্তরের শিক্ষার্থীদের বিশ্লেষণধর্মী জ্ঞান, সাধারণ বিজ্ঞান এবং যুক্তিবোধ যাচাইয়ের জন্য এই ক্যাটাগরি নির্ধারিত।</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- পড়াশোনা, সিলেবাস এবং পুরস্কার -->
+    <section id="study">
+        <h2 class="section-title">পড়াশোনা, <span>সিলেবাস ও পুরস্কার</span></h2>
+        <div class="placeholder-grid">
+            <div class="placeholder-card">
+                <h3>📚 সিলেবাস</h3>
+                <p>উভয় ক্যাটাগরির বিস্তারিত সিলেবাস খুব শীঘ্রই এখানে যুক্ত করা হবে।</p>
+            </div>
+            <div class="placeholder-card">
+                <h3>📖 পড়াশোনার বিষয়বস্তু</h3>
+                <p>অলিম্পিয়াডের প্রস্তুতির জন্য প্রয়োজনীয় নোটস ও প্রশ্নব্যাংক এখানে পাওয়া যাবে।</p>
+            </div>
+            <div class="placeholder-card" id="pri
