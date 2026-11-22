@@ -7,15 +7,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-    <!-- মোবাইল ও ডেস্কটপে ইন-পেজ PDF রেন্ডারিংয়ের জন্য Mozilla PDF.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 
     <style>
         :root {
-            --bg-page: #f8fafc;
+            --bg-page: #f4f7fb;
             --bg-surface: #ffffff;
-            --bg-soft: #f1f5f9;
-            --hero-grad: linear-gradient(125deg, #fff5eb 0%, #ffffff 48%, #eef6ff 100%);
+            --bg-soft: #eef3f9;
+            --hero-grad: linear-gradient(135deg, #fff6ed 0%, #ffffff 50%, #ebf4ff 100%);
             --text-main: #0f172a;
             --text-secondary: #334155;
             --text-muted: #64748b;
@@ -27,7 +25,8 @@
             --brand-green: #059669;
             --border-color: #e2e8f0;
             --shadow-sm: 0 2px 10px rgba(15, 23, 42, 0.05);
-            --shadow-md: 0 12px 32px rgba(15, 23, 42, 0.08);
+            --shadow-md: 0 14px 34px rgba(15, 23, 42, 0.08);
+            --shadow-lg: 0 24px 60px rgba(15, 23, 42, 0.22);
             --radius-lg: 20px;
             --radius-md: 14px;
         }
@@ -36,7 +35,7 @@
             --bg-page: #0b1120;
             --bg-surface: #111827;
             --bg-soft: #1e293b;
-            --hero-grad: linear-gradient(125deg, #172033 0%, #111827 55%, #0f172a 100%);
+            --hero-grad: linear-gradient(135deg, #162035 0%, #111827 55%, #0f172a 100%);
             --text-main: #f8fafc;
             --text-secondary: #cbd5e1;
             --text-muted: #94a3b8;
@@ -47,6 +46,7 @@
             --border-color: rgba(255, 255, 255, 0.1);
             --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.3);
             --shadow-md: 0 14px 36px rgba(0, 0, 0, 0.45);
+            --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.65);
         }
 
         * {
@@ -68,11 +68,10 @@
             color: inherit;
         }
 
-        /* ===== টপ নেভিগেশন বার ===== */
         .navbar {
             position: sticky;
             top: 0;
-            z-index: 1000;
+            z-index: 900;
             background: var(--bg-surface);
             border-bottom: 1px solid var(--border-color);
             box-shadow: var(--shadow-sm);
@@ -80,7 +79,7 @@
         }
 
         .nav-inner {
-            max-width: 1200px;
+            max-width: 1180px;
             margin: 0 auto;
             padding: 12px 20px;
             display: flex;
@@ -92,14 +91,14 @@
         .brand-logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 11px;
             text-decoration: none;
         }
 
         .brand-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
+            width: 42px;
+            height: 42px;
+            border-radius: 11px;
             background: linear-gradient(135deg, #0b5ed7, #2563eb);
             color: #fff;
             display: grid;
@@ -112,7 +111,7 @@
 
         .brand-text strong {
             display: block;
-            font-size: 1.05rem;
+            font-size: 1.08rem;
             line-height: 1.15;
             color: var(--text-main);
         }
@@ -222,21 +221,27 @@
             gap: 10px;
         }
 
-        .mobile-drawer a {
+        .mobile-drawer a,
+        .mobile-drawer button {
+            text-align: left;
+            background: none;
+            border: none;
+            border-bottom: 1px dashed var(--border-color);
+            font-family: inherit;
+            font-size: 1rem;
+            color: var(--text-main);
             text-decoration: none;
             font-weight: 600;
             padding: 8px 0;
-            border-bottom: 1px dashed var(--border-color);
+            cursor: pointer;
         }
 
-        /* ===== মূল কন্টেইনার ===== */
         .container {
             max-width: 1180px;
             margin: 0 auto;
             padding: 28px 20px 60px;
         }
 
-        /* ===== অফিশিয়াল হিরো ব্যানার কার্ড ===== */
         .hero-card {
             background: var(--hero-grad);
             border: 1px solid var(--border-color);
@@ -249,12 +254,12 @@
         .hero-ribbon {
             position: absolute;
             top: 18px;
-            right: -34px;
+            right: -36px;
             background: var(--brand-red);
             color: #fff;
             font-size: 0.82rem;
             font-weight: 700;
-            padding: 5px 42px;
+            padding: 5px 44px;
             transform: rotate(35deg);
             box-shadow: 0 4px 12px rgba(217, 27, 36, 0.25);
             z-index: 3;
@@ -263,9 +268,9 @@
 
         .hero-main {
             display: grid;
-            grid-template-columns: 1.15fr 0.85fr;
+            grid-template-columns: 1.2fr 0.8fr;
             gap: 28px;
-            padding: 36px 36px 26px;
+            padding: 38px 36px 28px;
             align-items: center;
         }
 
@@ -304,12 +309,12 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            font-size: 1.55rem;
+            font-size: 1.5rem;
             font-weight: 800;
             color: var(--brand-red);
             text-decoration: none;
             margin: 6px 0 14px;
-            padding: 6px 14px 6px 0;
+            padding: 4px 12px 4px 0;
             transition: transform 0.2s;
         }
 
@@ -320,11 +325,11 @@
 
         .hero-details-list {
             list-style: none;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
 
         .hero-details-list li {
-            font-size: 1.07rem;
+            font-size: 1.06rem;
             color: var(--text-secondary);
             margin-bottom: 8px;
         }
@@ -336,7 +341,7 @@
         .deadline-highlight {
             color: var(--brand-red);
             font-weight: 800;
-            font-size: 1.15rem;
+            font-size: 1.12rem;
         }
 
         .hero-btn-row {
@@ -388,42 +393,47 @@
         .btn-outline-lg:hover {
             border-color: var(--brand-blue);
             color: var(--brand-blue);
+            transform: translateY(-1px);
         }
 
-        /* মাস্কড পোস্টার ইমেজ ফ্রেম */
-        .hero-poster-wrap {
-            position: relative;
-            text-align: center;
-        }
-
-        .hero-poster-link {
-            display: block;
+        .hero-summary-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
             border-radius: 18px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 14px 32px rgba(15, 23, 42, 0.16);
-            border: 2px solid rgba(255, 255, 255, 0.85);
-            transition: transform 0.25s ease;
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
         }
 
-        .hero-poster-link:hover {
-            transform: scale(1.015);
+        .hero-summary-card h3 {
+            font-size: 1.18rem;
+            color: var(--text-main);
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
         }
 
-        .hero-poster-link img {
-            width: 100%;
-            max-height: 410px;
-            object-fit: cover;
-            display: block;
-            -webkit-mask-image: radial-gradient(circle at center, #000 78%, rgba(0,0,0,0.85) 100%);
-            mask-image: radial-gradient(circle at center, #000 78%, rgba(0,0,0,0.85) 100%);
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px dashed var(--border-color);
+            font-size: 0.96rem;
         }
 
-        .poster-caption {
-            margin-top: 8px;
-            font-size: 0.86rem;
+        .summary-item:last-of-type {
+            border-bottom: none;
+        }
+
+        .summary-item span {
             color: var(--text-muted);
             font-weight: 600;
+        }
+
+        .summary-item strong {
+            color: var(--text-main);
+            text-align: right;
         }
 
         .hero-bottom-strip {
@@ -464,7 +474,6 @@
             font-weight: 700;
         }
 
-        /* ===== স্ট্যাটস বার ===== */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -483,7 +492,7 @@
 
         .stat-box strong {
             display: block;
-            font-size: 1.5rem;
+            font-size: 1.45rem;
             font-weight: 800;
             color: var(--brand-blue);
             line-height: 1.2;
@@ -495,7 +504,6 @@
             font-weight: 600;
         }
 
-        /* ===== সাধারণ সেকশন হেডার ===== */
         .section {
             margin-top: 48px;
         }
@@ -508,8 +516,7 @@
             display: inline-block;
             font-size: 0.82rem;
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.4px;
             color: var(--brand-blue);
             margin-bottom: 4px;
         }
@@ -525,7 +532,6 @@
             font-size: 1rem;
         }
 
-        /* ===== ক্যাটাগরি কার্ড ===== */
         .cat-summary-bar {
             background: var(--bg-surface);
             border-left: 4px solid var(--brand-blue);
@@ -583,7 +589,7 @@
         }
 
         .cat-card h3 {
-            font-size: 1.4rem;
+            font-size: 1.38rem;
             margin-bottom: 8px;
         }
 
@@ -592,240 +598,199 @@
             margin-bottom: 18px;
         }
 
-        /* ===== ইন্টারেক্টিভ সিলেবাস ও PDF ভিউয়ার ===== */
-        .syllabus-hub {
+        .syllabus-entry-card {
             background: var(--bg-surface);
             border: 1px solid var(--border-color);
             border-radius: var(--radius-lg);
-            padding: 26px;
+            padding: 28px;
             box-shadow: var(--shadow-md);
-        }
-
-        .syllabus-main-trigger {
-            width: 100%;
-            background: linear-gradient(90deg, rgba(11, 94, 215, 0.09), rgba(217, 27, 36, 0.06));
-            border: 1.5px solid rgba(11, 94, 215, 0.35);
-            border-radius: 14px;
-            padding: 18px 22px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            font-family: inherit;
-            text-align: left;
-            color: var(--text-main);
-            transition: all 0.2s;
-        }
-
-        .syllabus-main-trigger:hover {
-            border-color: var(--brand-blue);
-        }
-
-        .syllabus-main-trigger strong {
-            display: block;
-            font-size: 1.2rem;
-        }
-
-        .syllabus-main-trigger small {
-            color: var(--text-muted);
-            font-size: 0.92rem;
-            font-weight: 500;
-        }
-
-        .chevron-pill {
-            background: var(--brand-blue);
-            color: #fff;
-            padding: 6px 14px;
-            border-radius: 999px;
-            font-size: 0.88rem;
-            font-weight: 700;
-            flex-shrink: 0;
-        }
-
-        .syllabus-drawer {
-            display: none;
-            margin-top: 22px;
-            animation: slideFade 0.25s ease;
-        }
-
-        .syllabus-drawer.open {
-            display: block;
-        }
-
-        .step-label {
-            font-size: 0.92rem;
-            font-weight: 700;
-            color: var(--text-muted);
-            margin-bottom: 10px;
-        }
-
-        .tab-btn-group {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 18px;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
         }
 
-        .tab-btn {
-            padding: 10px 18px;
-            border-radius: 10px;
-            border: 1px solid var(--border-color);
-            background: var(--bg-soft);
-            color: var(--text-main);
-            font-family: inherit;
-            font-size: 0.98rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.2s;
+        .syllabus-entry-text h3 {
+            font-size: 1.35rem;
+            margin-bottom: 6px;
         }
 
-        .tab-btn:hover {
-            border-color: var(--brand-blue);
+        .syllabus-entry-text p {
+            color: var(--text-secondary);
+            max-width: 650px;
         }
 
-        .tab-btn.active {
-            background: var(--brand-blue);
-            color: #fff;
-            border-color: var(--brand-blue);
-        }
-
-        .class-selector-panel {
-            background: var(--bg-soft);
-            border: 1px solid var(--border-color);
-            border-radius: 14px;
-            padding: 18px 20px;
-            margin-bottom: 18px;
+        .portal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(6px);
+            z-index: 1500;
             display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 18px;
+            opacity: 0;
+            transition: opacity 0.25s ease;
         }
 
-        .class-selector-panel.active {
-            display: block;
-            animation: slideFade 0.2s ease;
+        .portal-overlay.open {
+            display: flex;
+            opacity: 1;
         }
 
-        .pdf-reader-shell {
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            overflow: hidden;
+        .portal-window {
+            width: 100%;
+            max-width: 640px;
             background: var(--bg-surface);
-            display: none;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            transform: translateY(14px) scale(0.98);
+            transition: transform 0.25s ease;
         }
 
-        .pdf-reader-shell.active {
-            display: block;
-            animation: slideFade 0.25s ease;
+        .portal-overlay.open .portal-window {
+            transform: translateY(0) scale(1);
         }
 
-        .pdf-toolbar {
+        .portal-topbar {
             background: var(--bg-soft);
-            padding: 14px 18px;
+            padding: 16px 22px;
             border-bottom: 1px solid var(--border-color);
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
             gap: 12px;
         }
 
-        .pdf-meta h4 {
-            font-size: 1.08rem;
+        .portal-topbar-title strong {
+            display: block;
+            font-size: 1.15rem;
             color: var(--text-main);
         }
 
-        .pdf-meta span {
+        .portal-topbar-title span {
             font-size: 0.85rem;
             color: var(--text-muted);
+            font-weight: 600;
         }
 
-        .pdf-controls {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .ctrl-btn {
-            padding: 7px 12px;
-            border-radius: 8px;
+        .portal-close-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
             border: 1px solid var(--border-color);
             background: var(--bg-surface);
             color: var(--text-main);
-            font-family: inherit;
-            font-size: 0.88rem;
+            font-size: 1.1rem;
             font-weight: 700;
             cursor: pointer;
+            display: grid;
+            place-items: center;
+            transition: all 0.2s;
         }
 
-        .ctrl-btn:hover {
-            border-color: var(--brand-blue);
-            color: var(--brand-blue);
+        .portal-close-btn:hover {
+            border-color: var(--brand-red);
+            color: var(--brand-red);
         }
 
-        .pdf-canvas-area {
-            padding: 18px;
-            background: #e2e8f0;
-            text-align: center;
-            min-height: 220px;
-            max-height: 620px;
-            overflow: auto;
+        .portal-body {
+            padding: 24px 22px;
         }
 
-        body.dark-mode .pdf-canvas-area {
-            background: #0f172a;
-        }
-
-        #pdfCanvas {
-            max-width: 100%;
-            height: auto;
-            border-radius: 6px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-            background: #fff;
-        }
-
-        .pdf-status-banner {
-            padding: 14px 18px;
-            background: rgba(217, 119, 6, 0.1);
-            border-bottom: 1px solid var(--border-color);
+        .portal-intro {
+            font-size: 0.96rem;
             color: var(--text-secondary);
-            font-size: 0.94rem;
-            display: none;
+            margin-bottom: 16px;
         }
 
-        .built-in-prep {
-            padding: 20px;
-            border-top: 1px solid var(--border-color);
+        .slim-tab-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
 
-        .prep-q-card {
-            background: var(--bg-soft);
-            border: 1px solid var(--border-color);
+        .slim-tab-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            padding: 14px 18px;
             border-radius: 12px;
-            padding: 14px 16px;
-            margin-top: 10px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-soft);
+            text-decoration: none;
+            transition: all 0.22s ease;
         }
 
-        .prep-ans-toggle {
-            margin-top: 8px;
-            background: none;
-            border: none;
-            color: var(--brand-blue);
-            font-family: inherit;
-            font-weight: 700;
-            cursor: pointer;
-            font-size: 0.9rem;
+        .slim-tab-bar:hover {
+            background: rgba(11, 94, 215, 0.08);
+            border-color: var(--brand-blue);
+            transform: translateX(4px);
         }
 
-        .prep-ans-text {
-            display: none;
-            margin-top: 6px;
-            padding-top: 6px;
-            border-top: 1px dashed var(--border-color);
-            color: var(--brand-green);
+        .slim-tab-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 0;
+        }
+
+        .slim-tab-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 9px;
+            background: var(--brand-blue);
+            color: #fff;
+            display: grid;
+            place-items: center;
+            font-size: 1.05rem;
+            flex-shrink: 0;
+        }
+
+        .slim-tab-bar.junior-bar .slim-tab-icon {
+            background: var(--brand-amber);
+        }
+
+        .slim-tab-text strong {
+            display: block;
+            font-size: 1.04rem;
+            color: var(--text-main);
+            line-height: 1.25;
+        }
+
+        .slim-tab-text small {
+            display: block;
+            font-size: 0.84rem;
+            color: var(--text-muted);
             font-weight: 600;
-            font-size: 0.94rem;
         }
 
-        /* ===== রেজিস্ট্রেশন প্রক্রিয়া ও রোডম্যাপ ===== */
+        .slim-tab-action {
+            flex-shrink: 0;
+            font-size: 0.86rem;
+            font-weight: 700;
+            color: var(--brand-blue);
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            padding: 6px 12px;
+            border-radius: 999px;
+        }
+
+        .wps-helper-note {
+            margin-top: 16px;
+            padding: 12px 14px;
+            border-radius: 10px;
+            background: rgba(5, 150, 105, 0.09);
+            border: 1px dashed rgba(5, 150, 105, 0.4);
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+        }
+
         .roadmap-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -886,7 +851,6 @@
             word-break: break-all;
         }
 
-        /* ===== পুরস্কার ও ভবিষ্যৎ আপডেট ===== */
         .update-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -905,7 +869,6 @@
             margin-bottom: 6px;
         }
 
-        /* ===== ফুটার (৩-কলাম অফিশিয়াল লেআউট) ===== */
         footer {
             background: var(--bg-surface);
             border-top: 1px solid var(--border-color);
@@ -954,11 +917,6 @@
             color: var(--text-muted);
         }
 
-        @keyframes slideFade {
-            from { opacity: 0; transform: translateY(6px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
         @media (max-width: 920px) {
             .hero-main {
                 grid-template-columns: 1fr;
@@ -980,15 +938,18 @@
             .mobile-toggle {
                 display: grid;
             }
+            .slim-tab-bar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- ===== টপ নেভিগেশন বার ===== -->
     <header class="navbar">
         <div class="nav-inner">
-            <a href="#" class="brand-logo">
+            <a href="#top" class="brand-logo">
                 <div class="brand-icon">SO</div>
                 <div class="brand-text">
                     <strong>Science Olympiad</strong>
@@ -999,15 +960,15 @@
             <ul class="nav-links">
                 <li><a href="#top">হোম</a></li>
                 <li><a href="#categories">ক্যাটাগরি</a></li>
-                <li><button type="button" class="nav-btn" onclick="jumpToSyllabus()">সিলেবাস ▾</button></li>
-                <li><a href="#registration">রেজিস্ট্রেশন প্রক্রিয়া</a></li>
+                <li><button type="button" class="nav-btn" onclick="openSyllabusPortal()">সিলেবাস দেখুন</button></li>
+                <li><a href="#registration">রেজিস্ট্রেশন প্রক্রিয়া</a></li>
                 <li><a href="#prizes">পুরস্কার ও আপডেট</a></li>
             </ul>
 
             <div class="nav-actions">
                 <button type="button" class="icon-btn" id="themeToggleBtn" onclick="toggleTheme()" title="থিম পরিবর্তন করুন">🌙</button>
-                <a href="https://www.facebook.com/profile.php?id=61596762776855" target="_blank" class="btn-nav-outline">ফেসবুক পেজ</a>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfldm4U0aw1tUw6uSC9WpUgagiD3kBfcrxdNRq9FVN-2qGqIQ/viewform?usp=dialog" target="_blank" class="btn-nav-primary">রেজিস্ট্রেশন</a>
+                <a href="https://www.facebook.com/profile.php?id=61596762776855" target="_blank" rel="noopener noreferrer" class="btn-nav-outline">ফেসবুক পেজ</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfldm4U0aw1tUw6uSC9WpUgagiD3kBfcrxdNRq9FVN-2qGqIQ/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="btn-nav-primary">রেজিস্ট্রেশন</a>
                 <button type="button" class="icon-btn mobile-toggle" onclick="toggleMobileMenu()" aria-label="মেনু">☰</button>
             </div>
         </div>
@@ -1015,59 +976,74 @@
         <div id="mobileDrawer" class="mobile-drawer">
             <a href="#top" onclick="toggleMobileMenu()">হোম</a>
             <a href="#categories" onclick="toggleMobileMenu()">ক্যাটাগরি (২টি)</a>
-            <a href="#syllabus" onclick="toggleMobileMenu(); openSyllabusMenu();">সিলেবাস ও পিডিএফ</a>
-            <a href="#registration" onclick="toggleMobileMenu()">রেজিস্ট্রেশন প্রক্রিয়া</a>
-            <a href="https://www.facebook.com/profile.php?id=61596762776855" target="_blank">আমাদের ফেসবুক পেজ</a>
+            <button type="button" onclick="toggleMobileMenu(); openSyllabusPortal();">সিলেবাস দেখুন</button>
+            <a href="#registration" onclick="toggleMobileMenu()">রেজিস্ট্রেশন প্রক্রিয়া</a>
+            <a href="https://www.facebook.com/profile.php?id=61596762776855" target="_blank" rel="noopener noreferrer">আমাদের ফেসবুক পেজ</a>
         </div>
     </header>
 
     <main id="top" class="container">
 
-        <!-- ===== অফিশিয়াল হিরো ব্যানার কার্ড ===== -->
         <section class="hero-card">
             <div class="hero-ribbon">বিজ্ঞান শিখো, স্বপ্ন দেখো</div>
 
             <div class="hero-main">
                 <div>
                     <span class="hero-org-badge">🔬 বিজ্ঞান উৎসব ২০২৬ • Science Olympiad Competition</span>
-                    <h1 class="hero-title" id="siteEventTitle">সায়েন্স অলিম্পিয়াড কম্পিটিশন ২০২৬</h1>
+                    <h1 class="hero-title">সায়েন্স অলিম্পিয়াড কম্পিটিশন ২০২৬</h1>
 
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfldm4U0aw1tUw6uSC9WpUgagiD3kBfcrxdNRq9FVN-2qGqIQ/viewform?usp=dialog" target="_blank" class="hero-cta-headline">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfldm4U0aw1tUw6uSC9WpUgagiD3kBfcrxdNRq9FVN-2qGqIQ/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="hero-cta-headline">
                         রেজিস্ট্রেশন করতে ক্লিক করো &rarr;
                     </a>
 
                     <ul class="hero-details-list">
                         <li>
-                            <strong>ক্যাটাগরি (মোট ২টি):</strong> প্রাইমারি (১ম–৫ম শ্রেণি) এবং জুনিয়র (৬ষ্ঠ–১০ম শ্রেণি)।
+                            <strong>ক্যাটাগরি (মোট ২টি):</strong> প্রাইমারি ক্যাটাগরি (১ম – ৫ম শ্রেণি) এবং জুনিয়র ক্যাটাগরি (৬ষ্ঠ – ১০ম শ্রেণি)।
                         </li>
                         <li>
                             <strong>রেজিস্ট্রেশন চলবে:</strong> <span class="deadline-highlight">১লা জানুয়ারি – ১৮ই ফেব্রুয়ারি পর্যন্ত</span>
                         </li>
                         <li>
-                            <strong>পরীক্ষার সূচি:</strong> রেজিস্ট্রেশনকারীদের অলিম্পিয়াড শুরু হওয়ার <strong>১৫ দিন আগে</strong> জানিয়ে দেওয়া হবে।
+                            <strong>পরীক্ষার সময়সূচি:</strong> ১৮ই ফেব্রুয়ারির পর যারা রেজিস্ট্রেশন করবে, অলিম্পিয়াড শুরু হওয়ার ঠিক <strong>১৫ দিন আগে</strong> তাদেরকে জানিয়ে দেওয়া হবে।
                         </li>
                     </ul>
 
                     <div class="hero-btn-row">
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfldm4U0aw1tUw6uSC9WpUgagiD3kBfcrxdNRq9FVN-2qGqIQ/viewform?usp=dialog" target="_blank" class="btn-primary-lg">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfldm4U0aw1tUw6uSC9WpUgagiD3kBfcrxdNRq9FVN-2qGqIQ/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="btn-primary-lg">
                             এখনই রেজিস্ট্রেশন করো
                         </a>
-                        <button type="button" class="btn-outline-lg" onclick="jumpToSyllabus()">
-                            📚 সিলেবাস ও প্রশ্ন দেখো
+                        <button type="button" class="btn-outline-lg" onclick="openSyllabusPortal()">
+                            📚 সিলেবাস দেখুন
                         </button>
                     </div>
                 </div>
 
-                <!-- মাস্কিং করা ক্লিকযোগ্য পোস্টার ছবি -->
-                <div class="hero-poster-wrap">
-                    <a href="https://www.facebook.com/profile.php?id=61596762776855" target="_blank" class="hero-poster-link" title="ফেসবুক পেজে যুক্ত হতে ছবিতে ক্লিক করুন">
-                        <img
-                            src="Gemini_Generated_Image_xeb8fuxeb8fuxeb8.jpg"
-                            alt="Science Olympiad Competition 2026 Poster"
-                            onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22600%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23e0f2fe%22/><text x=%2250%25%22 y=%2246%25%22 font-family=%22sans-serif%22 font-size=%2228%22 font-weight=%22bold%22 fill=%22%230b5ed7%22 text-anchor=%22middle%22>Science Olympiad Competition 2026</text><text x=%2250%25%22 y=%2255%25%22 font-family=%22sans-serif%22 font-size=%2218%22 fill=%22%23334155%22 text-anchor=%22middle%22>গিটহাবে Gemini_Generated_Image_xeb8fuxeb8fuxeb8.jpg আপলোড করুন</text></svg>';"
-                        >
-                    </a>
-                    <div class="poster-caption">অফিশিয়াল ফেসবুক পেজ দেখতে পোস্টারে ক্লিক করুন</div>
+                <div class="hero-summary-card">
+                    <h3>📌 একনজরে অলিম্পিয়াড তথ্য</h3>
+                    <div class="summary-item">
+                        <span>প্রতিযোগিতার নাম</span>
+                        <strong>Science Olympiad Competition</strong>
+                    </div>
+                    <div class="summary-item">
+                        <span>মোট ক্যাটাগরি</span>
+                        <strong>২টি (প্রাইমারি ও জুনিয়র)</strong>
+                    </div>
+                    <div class="summary-item">
+                        <span>রেজিস্ট্রেশন শুরু</span>
+                        <strong>১লা জানুয়ারি</strong>
+                    </div>
+                    <div class="summary-item">
+                        <span>রেজিস্ট্রেশন শেষ</span>
+                        <strong>১৮ই ফেব্রুয়ারি</strong>
+                    </div>
+                    <div class="summary-item">
+                        <span>হেল্পলাইন (সেন্ড মানি)</span>
+                        <strong>01714906171</strong>
+                    </div>
+                    <div class="summary-item">
+                        <span>অফিশিয়াল আপডেট</span>
+                        <strong><a href="https://www.facebook.com/profile.php?id=61596762776855" target="_blank" rel="noopener noreferrer" style="color: var(--brand-blue); text-decoration: none;">ফেসবুক পেজ &nearr;</a></strong>
+                    </div>
                 </div>
             </div>
 
@@ -1075,176 +1051,107 @@
                 <div class="strip-dots">
                     <span>অনলাইন রেজিস্ট্রেশন</span>
                     <span class="dot"></span>
-                    <span>ইমেইলে চূড়ান্ত কনফার্মেশন</span>
+                    <span>ইমেইলে চূড়ান্ত কনফার্মেশন</span>
                     <span class="dot"></span>
                     <span>১৫ দিন আগে পরীক্ষার ঘোষণা</span>
                 </div>
                 <div class="helpline-pill">
-                    📞 প্রয়োজনে: 01714906171 (সেন্ড মানি করে ফি জমা দিন)
+                    📞 প্রয়োজনে: 01714906171 (সেন্ড মানি করে রেজিস্ট্রেশন ফি জমা দিন)
                 </div>
             </div>
         </section>
 
-        <!-- ===== সংক্ষিপ্ত পরিসংখ্যান ===== -->
         <div class="stats-grid">
             <div class="stat-box">
                 <strong>২টি</strong>
                 <span>প্রতিযোগিতার ক্যাটাগরি</span>
             </div>
             <div class="stat-box">
-                <strong>৯০০টি</strong>
-                <span>সিলেবাসভিত্তিক প্রশ্ন (৩টি PDF)</span>
+                <strong>২টি PDF</strong>
+                <span>কোশ্চেন ব্যাংক লিংক</span>
             </div>
             <div class="stat-box">
                 <strong>১৫ দিন আগে</strong>
                 <span>পরীক্ষার সূচি ঘোষণা</span>
             </div>
             <div class="stat-box">
-                <strong>১৮ই ফেব্রু</strong>
+                <strong>১৮ই ফেব্রুয়ারি</strong>
                 <span>রেজিস্ট্রেশনের শেষ তারিখ</span>
             </div>
         </div>
 
-        <!-- ===== ক্যাটাগরি সেকশন ===== -->
         <section id="categories" class="section">
             <div class="section-head">
                 <span class="eyebrow">প্রতিযোগিতার স্তর</span>
-                <h2>ক্যাটাগরি কয়টি ও কী কী?</h2>
-                <p>শিক্ষার্থীদের শ্রেণি অনুযায়ী মোট ২টি মূল ক্যাটাগরিতে অলিম্পিয়াড অনুষ্ঠিত হবে।</p>
+                <h2>ক্যাটাগরি কয়টি ও কী কী?</h2>
+                <p>শিক্ষার্থীদের শ্রেণি অনুযায়ী মোট ২টি মূল ক্যাটাগরিতে অলিম্পিয়াড অনুষ্ঠিত হবে।</p>
             </div>
 
             <div class="cat-summary-bar">
-                এই প্রতিযোগিতায় মোট <strong>২টি ক্যাটাগরি</strong> রয়েছে: ১) <strong>প্রাইমারি ক্যাটাগরি</strong> (১ম–৫ম শ্রেণি) এবং ২) <strong>জুনিয়র ক্যাটাগরি</strong> (৬ষ্ঠ–১০ম শ্রেণি)।
+                এই প্রতিযোগিতায় মোট <strong>২টি ক্যাটাগরি</strong> রয়েছে: ১) <strong>প্রাইমারি ক্যাটাগরি</strong> (১ম – ৫ম শ্রেণি) এবং ২) <strong>জুনিয়র ক্যাটাগরি</strong> (৬ষ্ঠ – ১০ম শ্রেণি)।
             </div>
 
             <div class="grid-2">
                 <div class="cat-card">
                     <div>
-                        <span class="cat-badge badge-primary">ক্যাটাগরি ০১ • ক্লাস ১ – ৫</span>
+                        <span class="cat-badge badge-primary">ক্যাটাগরি ০১ • ১ম – ৫ম শ্রেণি</span>
                         <h3>প্রাইমারি ক্যাটাগরি</h3>
-                        <p>১ম থেকে ৫ম শ্রেণির শিক্ষার্থীদের মৌলিক বিজ্ঞান, সংখ্যা জ্ঞান, যুক্তি ও দ্রুত গাণিতিক চিন্তাশক্তি যাচাইয়ের জন্য এই ক্যাটাগরি।</p>
+                        <p>১ম থেকে ৫ম শ্রেণির শিক্ষার্থীদের মৌলিক বিজ্ঞান, সংখ্যা জ্ঞান, যুক্তি ও দ্রুত চিন্তাশক্তি যাচাইয়ের জন্য এই ক্যাটাগরি নির্ধারিত।</p>
                     </div>
-                    <button type="button" class="btn-outline-lg" onclick="openCategoryDirectly('primary')">
-                        প্রাইমারি সিলেবাস ও PDF দেখো &rarr;
+                    <button type="button" class="btn-outline-lg" onclick="openSyllabusPortal()">
+                        সিলেবাস ও কোশ্চেন ব্যাংক দেখুন &rarr;
                     </button>
                 </div>
 
                 <div class="cat-card">
                     <div>
-                        <span class="cat-badge badge-junior">ক্যাটাগরি ০২ • ক্লাস ৬ – ১০</span>
+                        <span class="cat-badge badge-junior">ক্যাটাগরি ০২ • ৬ষ্ঠ – ১০ম শ্রেণি</span>
                         <h3>জুনিয়র ক্যাটাগরি</h3>
-                        <p>৬ষ্ঠ থেকে ১০ম শ্রেণির শিক্ষার্থীদের জন্য সাধারণ বিজ্ঞান, গাণিতিক বিশ্লেষণ, জ্যামিতি ও সমস্যা সমাধানের দক্ষতা যাচাইয়ের ক্যাটাগরি।</p>
+                        <p>৬ষ্ঠ থেকে ১০ম শ্রেণির শিক্ষার্থীদের জন্য সাধারণ বিজ্ঞান, গাণিতিক বিশ্লেষণ, জ্যামিতি ও সমস্যা সমাধানের দক্ষতা যাচাইয়ের ক্যাটাগরি।</p>
                     </div>
-                    <button type="button" class="btn-outline-lg" onclick="openCategoryDirectly('junior')">
-                        জুনিয়র সিলেবাস ও PDF দেখো &rarr;
+                    <button type="button" class="btn-outline-lg" onclick="openSyllabusPortal()">
+                        সিলেবাস ও কোশ্চেন ব্যাংক দেখুন &rarr;
                     </button>
                 </div>
             </div>
         </section>
 
-        <!-- ===== ইন্টারেক্টিভ সিলেবাস ও পিডিএফ প্রদর্শনী ===== -->
         <section id="syllabus" class="section">
             <div class="section-head">
-                <span class="eyebrow">প্রস্তুতি পোর্টাল</span>
-                <h2>সিলেবাস ও প্রস্তুতির প্রশ্নব্যাংক</h2>
-                <p>সিলেবাসের ওপর ট্যাপ করে তোমার ক্যাটাগরি ও শ্রেণি নির্বাচন করো এবং নির্ধারিত পিডিএফ প্রশ্নগুলো পড়ো।</p>
+                <span class="eyebrow">প্রস্তুতি ও পড়াশোনা</span>
+                <h2>সিলেবাস ও কোশ্চেন ব্যাংক পোর্টাল</h2>
+                <p>সিলেবাস ও ক্যাটাগরি অনুযায়ী নির্ধারিত পিডিএফ লিংক পেতে নিচের "সিলেবাস দেখুন" বাটনে ক্লিক করো।</p>
             </div>
 
-            <div class="syllabus-hub">
-                <button type="button" class="syllabus-main-trigger" onclick="toggleSyllabusDrawer()">
-                    <div>
-                        <strong>📚 সিলেবাস (ক্যাটাগরি ও ক্লাস দেখতে ট্যাপ করো)</strong>
-                        <small>প্রাইমারি ও জুনিয়র ক্যাটাগরির সম্পূর্ণ প্রশ্ন-পিডিএফ এখানে রয়েছে</small>
-                    </div>
-                    <span class="chevron-pill" id="syllabusToggleText">ট্যাপ করুন ▼</span>
-                </button>
-
-                <div id="syllabusDrawer" class="syllabus-drawer">
-                    <p class="step-label">ধাপ ১: তোমার ক্যাটাগরি নির্বাচন করো</p>
-                    <div class="tab-btn-group">
-                        <button type="button" id="catTabPrimary" class="tab-btn" onclick="selectSyllabusCategory('primary')">
-                            প্রাইমারি ক্যাটাগরি (১ম – ৫ম শ্রেণি)
-                        </button>
-                        <button type="button" id="catTabJunior" class="tab-btn" onclick="selectSyllabusCategory('junior')">
-                            জুনিয়র ক্যাটাগরি (৬ষ্ঠ – ১০ম শ্রেণি)
-                        </button>
-                    </div>
-
-                    <!-- প্রাইমারি সিলেক্ট করলে ক্লাস দেখাবে -->
-                    <div id="primaryClassBox" class="class-selector-panel">
-                        <p class="step-label">ধাপ ২ (প্রাইমারি): তোমার শ্রেণি অথবা প্রাইমারি ক্যাটাগরির ওপর ক্লিক করো</p>
-                        <div class="tab-btn-group" style="margin-bottom: 0;">
-                            <button type="button" class="tab-btn" onclick="loadPdfStudy('primary', '১ম শ্রেণি', this)">১ম শ্রেণি</button>
-                            <button type="button" class="tab-btn" onclick="loadPdfStudy('primary', '২য় শ্রেণি', this)">২য় শ্রেণি</button>
-                            <button type="button" class="tab-btn" onclick="loadPdfStudy('primary', '৩য় শ্রেণি', this)">৩য় শ্রেণি</button>
-                            <button type="button" class="tab-btn" onclick="loadPdfStudy('primary', '৪র্থ শ্রেণি', this)">৪র্থ শ্রেণি</button>
-                            <button type="button" class="tab-btn" onclick="loadPdfStudy('primary', '৫ম শ্রেণি', this)">৫ম শ্রেণি</button>
-                            <button type="button" class="tab-btn" onclick="loadPdfStudy('primary', 'প্রাইমারি পূর্ণাঙ্গ PDF', this)">প্রাইমারি ক্যাটাগরি PDF</button>
-                        </div>
-                    </div>
-
-                    <!-- জুনিয়র সিলেক্ট করলে জুনিয়র শ্রেণি ও PDF অপশন দেখাবে -->
-                    <div id="juniorClassBox" class="class-selector-panel">
-                        <p class="step-label">ধাপ ২ (জুনিয়র): তোমার শ্রেণি নির্বাচন করো — নির্ধারিত PDF ও প্রশ্ন চলে আসবে</p>
-                        <div class="tab-btn-group" style="margin-bottom: 0;">
-                            <button type="button" class="tab-btn" onclick="loadPdfStudy('junior68', '৬ষ্ঠ শ্রেণি', this)">৬ষ্ঠ শ্রেণি (PDF)</button>
-                            <button type="button" class="tab-btn" onclick="loadPdfStudy('junior68', '৭ম শ্রেণি', this)">৭ম শ্রেণি (PDF)</button>
-                            <button type="button" class="tab-btn" onclick="loadPdfStudy('junior68', '৮ম শ্রেণি', this)">৮ম শ্রেণি (PDF)</button>
-                            <button type="button" class="tab-btn" onclick="loadPdfStudy('junior910', '৯ম শ্রেণি', this)">৯ম শ্রেণি (PDF)</button>
-                            <button type="button" class="tab-btn" onclick="loadPdfStudy('junior910', '১০ম শ্রেণি', this)">১০ম শ্রেণি (PDF)</button>
-                        </div>
-                    </div>
-
-                    <!-- PDF রিডার ও অনুশীলন প্যানেল -->
-                    <div id="pdfReaderShell" class="pdf-reader-shell">
-                        <div class="pdf-toolbar">
-                            <div class="pdf-meta">
-                                <h4 id="readerTitle">পিডিএফ শিরোনাম</h4>
-                                <span id="readerSubtitle">শ্রেণি ও ফাইল তথ্য</span>
-                            </div>
-                            <div class="pdf-controls">
-                                <button type="button" class="ctrl-btn" onclick="changePdfPage(-1)">◀ পূর্ববর্তী</button>
-                                <span style="font-size: 0.9rem; font-weight: 700;">পৃষ্ঠা <span id="pageNum">1</span> / <span id="pageCount">-</span></span>
-                                <button type="button" class="ctrl-btn" onclick="changePdfPage(1)">পরবর্তী ▶</button>
-                                <button type="button" class="ctrl-btn" onclick="zoomPdf(0.2)">জুম +</button>
-                                <button type="button" class="ctrl-btn" onclick="zoomPdf(-0.2)">জুম -</button>
-                                <a id="pdfDownloadBtn" href="#" target="_blank" class="btn-nav-primary" style="text-decoration:none;">PDF খুলুন / ডাউনলোড</a>
-                            </div>
-                        </div>
-
-                        <div id="pdfStatusBanner" class="pdf-status-banner"></div>
-
-                        <div class="pdf-canvas-area">
-                            <canvas id="pdfCanvas"></canvas>
-                        </div>
-
-                        <div class="built-in-prep">
-                            <h4 style="margin-bottom: 4px;">🎯 এই পিডিএফের মূল পাঠ্যসূচি ও অনুশীলন নমুনা</h4>
-                            <p style="font-size: 0.92rem; color: var(--text-muted);" id="prepCoverageText"></p>
-                            <div id="prepQuestionsContainer"></div>
-                        </div>
-                    </div>
+            <div class="syllabus-entry-card">
+                <div class="syllabus-entry-text">
+                    <h3>📚 অলিম্পিয়াডের সব পড়াশোনা ও কোশ্চেন ব্যাংক</h3>
+                    <p>
+                        এখানে ক্লিক করলে কোশ্চেন ব্যাংক পোর্টালে প্রবেশ করবে। সেখানে ১ম–৫ম এবং ৬ষ্ঠ–১০ম+ শ্রেণির কোশ্চেন ব্যাংকের আলাদা দুটি লিংক রয়েছে।
+                    </p>
                 </div>
+                <button type="button" class="btn-primary-lg" onclick="openSyllabusPortal()">
+                    সিলেবাস দেখুন &rarr;
+                </button>
             </div>
         </section>
 
-        <!-- ===== রেজিস্ট্রেশন প্রক্রিয়া ও রোডম্যাপ ===== -->
         <section id="registration" class="section">
             <div class="section-head">
-                <span class="eyebrow">অংশগ্রহণের নিয়ম</span>
-                <h2>রেজিস্ট্রেশন প্রক্রিয়া ও সময়সূচি</h2>
+                <span class="eyebrow">অংশগ্রহণের নিয়ম</span>
+                <h2>রেজিস্ট্রেশন প্রক্রিয়া ও সময়সূচি</h2>
             </div>
 
             <div class="roadmap-grid">
                 <div class="step-card">
                     <div class="step-num">১</div>
                     <h4>অনলাইন ফর্ম পূরণ</h4>
-                    <p>১লা জানুয়ারি থেকে ১৮ই ফেব্রুয়ারির মধ্যে গুগল ফর্মের মাধ্যমে তোমার তথ্য দিয়ে রেজিস্ট্রেশন শুরু করো।</p>
+                    <p>১লা জানুয়ারি থেকে ১৮ই ফেব্রুয়ারির মধ্যে গুগল ফর্মের মাধ্যমে তোমার সঠিক তথ্য দিয়ে রেজিস্ট্রেশন সম্পন্ন করো।</p>
                 </div>
                 <div class="step-card">
                     <div class="step-num">২</div>
                     <h4>ফি জমা (সেন্ড মানি)</h4>
-                    <p>প্রয়োজনে <strong>01714906171</strong> নম্বরে সেন্ড মানি করে রেজিস্ট্রেশন ফি জমা দাও এবং তথ্য সংরক্ষণ করো।</p>
+                    <p>প্রয়োজনে <strong>01714906171</strong> নম্বরে সেন্ড মানি করে রেজিস্ট্রেশন ফি জমা দাও এবং ট্রানজেকশন তথ্য সংরক্ষণ করো।</p>
                 </div>
                 <div class="step-card">
                     <div class="step-num">৩</div>
@@ -1254,17 +1161,17 @@
                 <div class="step-card">
                     <div class="step-num">৪</div>
                     <h4>১৫ দিন আগে পরীক্ষার নোটিশ</h4>
-                    <p>১৮ই ফেব্রুয়ারির পর রেজিস্ট্রেশন সম্পন্নকারীদের অলিম্পিয়াড শুরু হওয়ার ঠিক ১৫ দিন আগে জানিয়ে দেওয়া হবে।</p>
+                    <p>১৮ই ফেব্রুয়ারির পর যারা রেজিস্ট্রেশন করবে, অলিম্পিয়াড শুরু হওয়ার ঠিক ১৫ দিন আগে তাদেরকে জানিয়ে দেওয়া হবে।</p>
                 </div>
             </div>
 
             <div class="notice-card">
                 <p style="font-size: 1.06rem; margin-bottom: 10px;">
-                    <strong>📌 গুরুত্বপূর্ণ নির্দেশনা:</strong> আপনার রেজিস্ট্রেশন সম্পন্ন হলে এবং রেজিস্ট্রেশন চূড়ান্ত হলে ইমেইলের মাধ্যমে তা আপনাকে পাঠিয়ে দেওয়া হবে। নিয়মিত ইমেইল ইনবক্স এবং স্প্যাম ফোল্ডার চেক করুন।
+                    <strong>📌 গুরুত্বপূর্ণ নির্দেশনা:</strong> আপনার রেজিস্ট্রেশন সম্পন্ন হলে এবং রেজিস্ট্রেশন চূড়ান্ত হলে ইমেইলের মাধ্যমে তা আপনাকে পাঠিয়ে দেওয়া হবে। নিয়মিত ইমেইল ইনবক্স ও স্প্যাম ফোল্ডার চেক করুন।
                 </p>
 
                 <div style="margin: 14px 0;">
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfldm4U0aw1tUw6uSC9WpUgagiD3kBfcrxdNRq9FVN-2qGqIQ/viewform?usp=dialog" target="_blank" class="btn-primary-lg">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfldm4U0aw1tUw6uSC9WpUgagiD3kBfcrxdNRq9FVN-2qGqIQ/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="btn-primary-lg">
                         রেজিস্ট্রেশন ফর্ম ওপেন করো &rarr;
                     </a>
                 </div>
@@ -1275,7 +1182,7 @@
                     </p>
                     <p style="margin-bottom: 0;">
                         আমাদের ফেসবুক পেজে জয়েন করুন:
-                        <a href="https://www.facebook.com/profile.php?id=61596762776855" target="_blank">
+                        <a href="https://www.facebook.com/profile.php?id=61596762776855" target="_blank" rel="noopener noreferrer">
                             https://www.facebook.com/profile.php?id=61596762776855
                         </a>
                     </p>
@@ -1283,7 +1190,6 @@
             </div>
         </section>
 
-        <!-- ===== পুরস্কার ও ভবিষ্যৎ আপডেট ===== -->
         <section id="prizes" class="section">
             <div class="section-head">
                 <span class="eyebrow">নোটিশ ও ঘোষণা</span>
@@ -1294,19 +1200,19 @@
                 <div class="update-card">
                     <h4>🏆 পুরস্কার ও সনদপত্র</h4>
                     <p style="color: var(--text-secondary); font-size: 0.96rem;">
-                        উভয় ক্যাটাগরির সেরা বিজয়ীদের জন্য বিশেষ পুরস্কার, মেডেল ও সার্টিফিকেটের বিস্তারিত তালিকা খুব শীঘ্রই প্রকাশ করা হবে।
+                        উভয় ক্যাটাগরির সেরা বিজয়ীদের জন্য বিশেষ পুরস্কার, মেডেল ও সার্টিফিকেটের বিস্তারিত তালিকা খুব শীঘ্রই প্রকাশ করা হবে।
                     </p>
                 </div>
                 <div class="update-card">
-                    <h4>🗓️ পরীক্ষার চূড়ান্ত তারিখ</h4>
+                    <h4>🗓️ পরীক্ষার চূড়ান্ত তারিখ</h4>
                     <p style="color: var(--text-secondary); font-size: 0.96rem;">
-                        ১৮ই ফেব্রুয়ারি রেজিস্ট্রেশন শেষ হওয়ার পর অলিম্পিয়াড শুরু হওয়ার ১৫ দিন আগে নিবন্ধিত সবাইকে পরীক্ষার তারিখ ও সময় জানিয়ে দেওয়া হবে।
+                        ১৮ই ফেব্রুয়ারি রেজিস্ট্রেশন শেষ হওয়ার পর অলিম্পিয়াড শুরু হওয়ার ১৫ দিন আগে নিবন্ধিত সবাইকে পরীক্ষার তারিখ ও সময় জানিয়ে দেওয়া হবে।
                     </p>
                 </div>
                 <div class="update-card">
-                    <h4>📘 অতিরিক্ত প্রস্তুতি সহায়তা</h4>
+                    <h4>📘 কোশ্চেন ব্যাংক প্রস্তুতি</h4>
                     <p style="color: var(--text-secondary); font-size: 0.96rem;">
-                        ক্লাসভিত্তিক ৩০০টি করে প্রশ্ন সংবলিত পিডিএফগুলো পড়লেই অলিম্পিয়াডের মূল প্রস্তুতি সম্পূর্ণ হবে।
+                        সিলেবাস পোর্টালে থাকা কোশ্চেন ব্যাংক দুটি ওপেন করে নিয়মিত অনুশীলন করো।
                     </p>
                 </div>
             </div>
@@ -1314,13 +1220,58 @@
 
     </main>
 
-    <!-- ===== অফিশিয়াল ৩-কলাম ফুটার ===== -->
+    <div id="syllabusPortalModal" class="portal-overlay" role="dialog" aria-modal="true" aria-labelledby="portalTitle" onclick="handleOverlayClick(event)">
+        <div class="portal-window">
+            <div class="portal-topbar">
+                <div class="portal-topbar-title">
+                    <strong id="portalTitle">সিলেবাস ও কোশ্চেন ব্যাংক পোর্টাল</strong>
+                    <span>তোমার ক্যাটাগরি অনুযায়ী নিচের ট্যাব-বারে ক্লিক করো</span>
+                </div>
+                <button type="button" class="portal-close-btn" onclick="closeSyllabusPortal()" aria-label="বন্ধ করুন">&times;</button>
+            </div>
+
+            <div class="portal-body">
+                <p class="portal-intro">
+                    নিচের যেকোনো একটি লিংকে ক্লিক করলে সেটি নতুন ট্যাবে ওপেন হবে:
+                </p>
+
+                <div class="slim-tab-stack">
+                    <a id="qbLinkPrimary" href="#" target="_blank" rel="noopener noreferrer" class="slim-tab-bar">
+                        <div class="slim-tab-left">
+                            <div class="slim-tab-icon">📄</div>
+                            <div class="slim-tab-text">
+                                <strong>সায়েন্স অলিম্পিয়াড কোশ্চেন ব্যাংক (১ম – ৫ম শ্রেণি)</strong>
+                                <small>প্রাইমারি ক্যাটাগরি • PDF লিংক</small>
+                            </div>
+                        </div>
+                        <span class="slim-tab-action">ওপেন করুন &nearr;</span>
+                    </a>
+
+                    <a id="qbLinkJunior" href="#" target="_blank" rel="noopener noreferrer" class="slim-tab-bar junior-bar">
+                        <div class="slim-tab-left">
+                            <div class="slim-tab-icon">📘</div>
+                            <div class="slim-tab-text">
+                                <strong>সায়েন্স অলিম্পিয়াড কোশ্চেন ব্যাংক (৬ষ্ঠ – ১০ম+ শ্রেণি)</strong>
+                                <small>জুনিয়র ক্যাটাগরি • PDF লিংক</small>
+                            </div>
+                        </div>
+                        <span class="slim-tab-action">ওপেন করুন &nearr;</span>
+                    </a>
+                </div>
+
+                <div class="wps-helper-note">
+                    <strong>টিপস:</strong> লিংক খোলার পর ডাউনলোড করে বা "Open with" থেকে <strong>WPS Office</strong> বেছে নিলে WPS Office-এ পড়তে পারবে।
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <div class="footer-inner">
             <div class="footer-col">
                 <h4>Science Olympiad Competition 2026</h4>
                 <p style="color: var(--text-muted); font-size: 0.94rem;">
-                    প্রাইমারি (১ম–৫ম শ্রেণি) ও জুনিয়র (৬ষ্ঠ–১০ম শ্রেণি) শিক্ষার্থীদের বিজ্ঞান ও যুক্তিচর্চায় উৎসাহিত করার লক্ষ্যে আয়োজিত।
+                    প্রাইমারি (১ম – ৫ম শ্রেণি) ও জুনিয়র (৬ষ্ঠ – ১০ম শ্রেণি) শিক্ষার্থীদের বিজ্ঞান ও যুক্তিচর্চায় উৎসাহিত করার লক্ষ্যে আয়োজিত।
                 </p>
             </div>
             <div class="footer-col">
@@ -1328,16 +1279,16 @@
                 <ul>
                     <li><a href="#top">হোম</a></li>
                     <li><a href="#categories">ক্যাটাগরি (২টি)</a></li>
-                    <li><a href="#syllabus" onclick="openSyllabusMenu()">সিলেবাস ও PDF</a></li>
-                    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfldm4U0aw1tUw6uSC9WpUgagiD3kBfcrxdNRq9FVN-2qGqIQ/viewform?usp=dialog" target="_blank">রেজিস্ট্রেশন ফর্ম</a></li>
+                    <li><a href="#syllabus" onclick="openSyllabusPortal(); return false;">সিলেবাস দেখুন</a></li>
+                    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfldm4U0aw1tUw6uSC9WpUgagiD3kBfcrxdNRq9FVN-2qGqIQ/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">রেজিস্ট্রেশন ফর্ম</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>যোগাযোগ ও আপডেট</h4>
                 <ul>
                     <li>হেল্পলাইন (সেন্ড মানি): <strong>01714906171</strong></li>
-                    <li>ইমেইল কনফার্মেশন: রেজিস্ট্রেশন চূড়ান্ত হলে পাঠানো হবে</li>
-                    <li>ফেসবুক: <a href="https://www.facebook.com/profile.php?id=61596762776855" target="_blank">অফিশিয়াল পেজ ভিজিট করুন</a></li>
+                    <li>ইমেইল কনফার্মেশন: রেজিস্ট্রেশন চূড়ান্ত হলে পাঠানো হবে</li>
+                    <li>ফেসবুক: <a href="https://www.facebook.com/profile.php?id=61596762776855" target="_blank" rel="noopener noreferrer">অফিশিয়াল পেজ ভিজিট করুন</a></li>
                 </ul>
             </div>
         </div>
@@ -1347,249 +1298,47 @@
     </footer>
 
     <script>
-        /* ==============================================================
-           সহজ এডিটিং সেকশন: ভবিষ্যতে এখান থেকেই নাম, তারিখ ও PDF বদলাতে পারবে
-           ============================================================== */
-        const PDF_CATALOG = {
-            primary: {
-                title: 'প্রাইমারি বৃত্তি পরীক্ষা (ক্লাস ৩–৫) — সূচিপত্রভিত্তিক ৩০০টি বুদ্ধিদীপ্ত প্রশ্ন',
-                file: 'প্রাইমারি বৃত্তি পরীক্ষা (ক্লাস ৩–৫) — সূচিপত্রভিত্তিক ৩০০টি বুদ্ধিদীপ্ত প্রশ্ন.pdf',
-                coverage: '৩য় শ্রেণির ১৩টি অধ্যায় (প্রশ্ন ১–১০০), ৪র্থ শ্রেণির ১০টি অধ্যায় (প্রশ্ন ১০১–২০০) এবং ৫ম শ্রেণির ১১টি অধ্যায় (প্রশ্ন ২০১–৩০০) থেকে সহজ পদ্ধতির গুণ, সংখ্যা, ভগ্নাংশ, পরিমাপ ও জ্যামিতি।',
-                samples: [
-                    {
-                        q: '১, ৩, ৫, ৭, ৯ এই পাঁচটি অঙ্ক একবার করে ব্যবহার করে গঠিত ক্ষুদ্রতম ও বৃহত্তম পাঁচ অঙ্কের সংখ্যার পার্থক্য মুখে মুখে কত?',
-                        a: 'উত্তর: ৮৬৪২০ (বৃহত্তম ৯৭৫৩১ − ক্ষুদ্রতম ১৩৫৭৯ = ৮৬৪২০)'
-                    },
-                    {
-                        q: 'কোন ক্ষুদ্রতম সংখ্যাকে ৪, ৬ ও ৮ দিয়ে ভাগ করলে প্রতিবার ৩ অবশিষ্ট থাকবে?',
-                        a: 'উত্তর: ২৭ (৪, ৬ ও ৮-এর ল.সা.গু ২৪ + ৩ = ২৭)'
-                    },
-                    {
-                        q: '১ থেকে ১০০ পর্যন্ত মৌলিক সংখ্যার সংখ্যা কত?',
-                        a: 'উত্তর: ২৫টি'
-                    }
-                ]
-            },
-            junior68: {
-                title: 'ষষ্ঠ থেকে অষ্টম শ্রেণি (ক্লাস ৬–৮) — সূচিপত্রভিত্তিক ৩০০টি বুদ্ধিদীপ্ত প্রশ্ন ও উত্তরমালা',
-                file: 'ষষ্ঠ থেকে অষ্টম শ্রেণি (ক্লাস ৬–৮) — সূচিপত্রভিত্তিক ৩০০টি বুদ্ধিদীপ্ত প্রশ্ন ও উত্তরমালা.pdf',
-                coverage: '৬ষ্ঠ–৮ম শ্রেণির স্বাভাবিক সংখ্যা, অনুপাত-শতকরা, মূলদ-অমূলদ সংখ্যা, বীজগণিতীয় সূত্রাবলি, প্যাটার্ন, মুনাফা, সেট, পিথাগোরাসের উপপাদ্য ও বৃত্ত সংক্রান্ত ৩০০টি প্রশ্ন।',
-                samples: [
-                    {
-                        q: 'একটি সংখ্যার ২০% বৃদ্ধি করে প্রাপ্ত মানকে ২০% হ্রাস করলে, মূল সংখ্যার তুলনায় শতকরা কত পরিবর্তন হবে?',
-                        a: 'উত্তর: ৪% কমবে'
-                    },
-                    {
-                        q: 'বার্ষিক ৮% সরল মুনাফায় ২৫০০ টাকার ৩ বছরের মুনাফা কত টাকা?',
-                        a: 'উত্তর: ৬০০ টাকা'
-                    },
-                    {
-                        q: 'পিথাগোরাসের উপপাদ্য অনুযায়ী সমকোণী ত্রিভুজের ভূমি ৯ সেমি ও লম্ব ১২ সেমি হলে, অতিভুজ কত সেমি?',
-                        a: 'উত্তর: ১৫ সেমি'
-                    }
-                ]
-            },
-            junior910: {
-                title: 'নবম-দশম শ্রেণি — সূচিপত্রভিত্তিক ৩০০টি বুদ্ধিদীপ্ত ও মুখে মুখে সমাধানযোগ্য প্রশ্ন',
-                file: 'নবম-দশম শ্রেণি — সূচিপত্রভিত্তিক ৩০০টি বুদ্ধিদীপ্ত ও মুখে মুখে সমাধানযোগ্য প্রশ্ন.pdf',
-                coverage: 'নবম-দশম শ্রেণির ১৭টি অধ্যায় — বাস্তব সংখ্যা, সেট ও ফাংশন, সূচক ও লগারিদম, বৃত্ত, ত্রিকোণমিতিক অনুপাত, দূরত্ব-উচ্চতা, সসীম ধারা, পরিমিতি ও পরিসংখ্যান।',
-                samples: [
-                    {
-                        q: 'n একটি বিজোড় স্বাভাবিক সংখ্যা হলে, n² − ১ সর্বদা কত দ্বারা বিভাজ্য হবে?',
-                        a: 'উত্তর: ৮ দ্বারা (বিজোড় সংখ্যার বর্গের অন্তর সম্পর্কিত নিয়মে ৮-এর গুণিতক)'
-                    },
-                    {
-                        q: 'বৃত্তস্থ চতুর্ভুজের বিপরীত কোণদ্বয়ের সমষ্টি কত ডিগ্রি?',
-                        a: 'উত্তর: ১৮০°'
-                    },
-                    {
-                        q: '১ থেকে ১০০ পর্যন্ত মৌলিক সংখ্যার সংখ্যা কত?',
-                        a: 'উত্তর: ২৫টি'
-                    }
-                ]
-            }
+        const SYLLABUS_LINKS = {
+            primaryOneToFive: "https://acrobat.adobe.com/id/urn:aaid:sc:AP:6bc2275f-9b17-4420-a67a-e3b8aa66feb9",
+            juniorSixToTenPlus: "https://acrobat.adobe.com/id/urn:aaid:sc:AP:c73d91b7-ebaf-4c36-8181-38f7cc2334cc"
         };
 
-        /* ===== থিম ও মোবাইল মেনু ===== */
+        document.getElementById("qbLinkPrimary").href = SYLLABUS_LINKS.primaryOneToFive;
+        document.getElementById("qbLinkJunior").href = SYLLABUS_LINKS.juniorSixToTenPlus;
+
         function toggleTheme() {
-            document.body.classList.toggle('dark-mode');
-            const btn = document.getElementById('themeToggleBtn');
-            btn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+            document.body.classList.toggle("dark-mode");
+            const btn = document.getElementById("themeToggleBtn");
+            btn.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
         }
 
         function toggleMobileMenu() {
-            document.getElementById('mobileDrawer').classList.toggle('open');
+            document.getElementById("mobileDrawer").classList.toggle("open");
         }
 
-        /* ===== সিলেবাস নেভিগেশন ও ক্যাটাগরি ফ্লো ===== */
-        function openSyllabusMenu() {
-            const drawer = document.getElementById('syllabusDrawer');
-            const toggleText = document.getElementById('syllabusToggleText');
-            if (!drawer.classList.contains('open')) {
-                drawer.classList.add('open');
-                toggleText.textContent = 'বন্ধ করুন ▲';
+        function openSyllabusPortal() {
+            const modal = document.getElementById("syllabusPortalModal");
+            modal.classList.add("open");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeSyllabusPortal() {
+            const modal = document.getElementById("syllabusPortalModal");
+            modal.classList.remove("open");
+            document.body.style.overflow = "";
+        }
+
+        function handleOverlayClick(event) {
+            if (event.target.id === "syllabusPortalModal") {
+                closeSyllabusPortal();
             }
         }
 
-        function toggleSyllabusDrawer() {
-            const drawer = document.getElementById('syllabusDrawer');
-            const toggleText = document.getElementById('syllabusToggleText');
-            drawer.classList.toggle('open');
-            toggleText.textContent = drawer.classList.contains('open') ? 'বন্ধ করুন ▲' : 'ট্যাপ করুন ▼';
-        }
-
-        function jumpToSyllabus() {
-            openSyllabusMenu();
-            document.getElementById('syllabus').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function openCategoryDirectly(cat) {
-            jumpToSyllabus();
-            selectSyllabusCategory(cat);
-        }
-
-        function selectSyllabusCategory(cat) {
-            const btnP = document.getElementById('catTabPrimary');
-            const btnJ = document.getElementById('catTabJunior');
-            const boxP = document.getElementById('primaryClassBox');
-            const boxJ = document.getElementById('juniorClassBox');
-            const reader = document.getElementById('pdfReaderShell');
-
-            reader.classList.remove('active');
-            document.querySelectorAll('.class-selector-panel .tab-btn').forEach(b => b.classList.remove('active'));
-
-            if (cat === 'primary') {
-                btnP.classList.add('active');
-                btnJ.classList.remove('active');
-                boxP.classList.add('active');
-                boxJ.classList.remove('active');
-            } else {
-                btnJ.classList.add('active');
-                btnP.classList.remove('active');
-                boxJ.classList.add('active');
-                boxP.classList.remove('active');
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+                closeSyllabusPortal();
             }
-        }
-
-        /* ===== PDF.js ক্যানভাস রেন্ডারিং লজিক ===== */
-        if (window.pdfjsLib) {
-            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-        }
-
-        let currentPdfDoc = null;
-        let currentPage = 1;
-        let currentScale = 1.2;
-        let renderInProgress = false;
-        let loadToken = 0;
-
-        function loadPdfStudy(key, selectedClassLabel, clickedBtn) {
-            const info = PDF_CATALOG[key];
-            if (!info) return;
-
-            loadToken += 1;
-            const myToken = loadToken;
-
-            document.querySelectorAll('.class-selector-panel .tab-btn').forEach(b => b.classList.remove('active'));
-            if (clickedBtn) clickedBtn.classList.add('active');
-
-            const reader = document.getElementById('pdfReaderShell');
-            const statusBanner = document.getElementById('pdfStatusBanner');
-            const encodedUrl = encodeURI(info.file);
-
-            document.getElementById('readerTitle').textContent = info.title;
-            document.getElementById('readerSubtitle').textContent = 'নির্বাচিত শ্রেণি: ' + selectedClassLabel + ' • ফাইল: ' + info.file;
-            document.getElementById('pdfDownloadBtn').href = encodedUrl;
-            document.getElementById('prepCoverageText').textContent = info.coverage;
-
-            const qBox = document.getElementById('prepQuestionsContainer');
-            qBox.innerHTML = '';
-            info.samples.forEach((item, idx) => {
-                const card = document.createElement('div');
-                card.className = 'prep-q-card';
-                card.innerHTML = `
-                    <div><strong>প্রশ্ন ${idx + 1}:</strong> ${item.q}</div>
-                    <button type="button" class="prep-ans-toggle" onclick="toggleSampleAns(this)">উত্তর ও কৌশল দেখুন ▼</button>
-                    <div class="prep-ans-text">${item.a}</div>
-                `;
-                qBox.appendChild(card);
-            });
-
-            reader.classList.add('active');
-            reader.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
-            statusBanner.style.display = 'block';
-            statusBanner.textContent = 'পিডিএফ লোড হচ্ছে... (গিটহাবে ফাইল আপলোড থাকলে এখানেই পৃষ্ঠাগুলো দেখা যাবে)';
-            document.getElementById('pageNum').textContent = '1';
-            document.getElementById('pageCount').textContent = '-';
-
-            if (!window.pdfjsLib) {
-                statusBanner.textContent = 'PDF প্রিভিউ লোড হয়নি। উপরের "PDF খুলুন / ডাউনলোড" বাটনে ক্লিক করে পড়ুন।';
-                return;
-            }
-
-            currentPdfDoc = null;
-            currentPage = 1;
-            currentScale = window.innerWidth < 640 ? 0.85 : 1.25;
-            renderInProgress = false;
-
-            pdfjsLib.getDocument(encodedUrl).promise.then(pdfDoc => {
-                if (myToken !== loadToken) return;
-                currentPdfDoc = pdfDoc;
-                document.getElementById('pageCount').textContent = pdfDoc.numPages;
-                statusBanner.style.display = 'none';
-                renderPdfPage(currentPage);
-            }).catch(() => {
-                if (myToken !== loadToken) return;
-                statusBanner.style.display = 'block';
-                statusBanner.innerHTML = 'ℹ️ এখনই লোকাল প্রিভিউতে PDF পাওয়া যায়নি। গিটহাবে <strong>' + info.file + '</strong> আপলোড করলে এখানেই পুরো পিডিএফ পড়া যাবে—অথবা নিচের অনুশীলন নমুনা পড়ুন ও উপরের বাটন থেকে ডাউনলোড করুন।';
-                const canvas = document.getElementById('pdfCanvas');
-                const ctx = canvas.getContext('2d');
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-            });
-        }
-
-        function renderPdfPage(num) {
-            if (!currentPdfDoc || renderInProgress) return;
-            renderInProgress = true;
-
-            currentPdfDoc.getPage(num).then(page => {
-                const canvas = document.getElementById('pdfCanvas');
-                const ctx = canvas.getContext('2d');
-                const viewport = page.getViewport({ scale: currentScale });
-
-                canvas.height = viewport.height;
-                canvas.width = viewport.width;
-
-                return page.render({ canvasContext: ctx, viewport: viewport }).promise;
-            }).then(() => {
-                document.getElementById('pageNum').textContent = num;
-                renderInProgress = false;
-            }).catch(() => {
-                renderInProgress = false;
-            });
-        }
-
-        function changePdfPage(offset) {
-            if (!currentPdfDoc) return;
-            const target = currentPage + offset;
-            if (target < 1 || target > currentPdfDoc.numPages) return;
-            currentPage = target;
-            renderPdfPage(currentPage);
-        }
-
-        function zoomPdf(delta) {
-            if (!currentPdfDoc) return;
-            const next = Math.min(2.4, Math.max(0.6, currentScale + delta));
-            currentScale = Number(next.toFixed(2));
-            renderPdfPage(currentPage);
-        }
-
-        function toggleSampleAns(btn) {
-            const ans = btn.nextElementSibling;
-            const isShown = ans.style.display === 'block';
-            ans.style.display = isShown ? 'none' : 'block';
-            btn.textContent = isShown ? 'উত্তর ও কৌশল দেখুন ▼' : 'উত্তর লুকান ▲';
-        }
+        });
     </script>
 
 </body>
