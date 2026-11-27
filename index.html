@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Olympiad Competition 2026 | বিজ্ঞান উৎসব</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-page: #f4f7fb;
+            --bg-surface: #ffffff;
+            --bg-soft: #eef3f9;
+            --hero-grad: linear-gradient(135deg, #fff6ed 0%, #ffffff 50%, #ebf4ff 100%);
+            --text-main: #0f172a;
+            --text-secondary: #334155;
+            --text-muted: #64748b;
+            --brand-blue: #0b5ed7;
+            --brand-blue-dark: #094bb0;
+            --brand-red: #d91b24;
+            --brand-red-hover: #b8141c;
+            --brand-amber: #d97706;
+            --brand-green: #059669;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 2px 10px rgba(15, 23, 42, 0.05);
+            --shadow-md: 0 14px 34px rgba(15, 23, 42, 0.08);
+            --shadow-lg: 0 24px 60px rgba(15, 23, 42, 0.22);
+            --radius-lg: 20px;
+            --radius-md: 14px;
+        }
+
+        body.dark-mode {
+            --bg-page: #0b1120;
+            --bg-surface: #111827;
+            --bg-soft: #1e293b;
+            --hero-grad: linear-gradient(135deg, #162035 0%, #111827 55%, #0f172a 100%);
+            --text-main: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --brand-blue: #38bdf8;
+            --brand-blue-dark: #0284c7;
+            --brand-red: #f43f5e;
+            --brand-red-hover: #e11d48;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 14px 36px rgba(0, 0, 0, 0.45);
+            --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.65);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Hind Siliguri', 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-main);
+            line-height: 1.65;
+            transition: background-color 0.25s ease, color 0.25s ease;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 900;
+            background: var(--bg-surface);
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            transition: background-color 0.25s ease;
+        }
+
+        .nav-inner {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            text-decoration: none;
+        }
+
+        .brand-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 11px;
+            background: linear-gradient(135deg, #0b5ed7, #2563eb);
+            color: #fff;
+            display: grid;
+            place-items: center;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800;
+            font-size: 1.05rem;
+            flex-shrink: 0;
+        }
+
+        .brand-text strong {
+            display: block;
+            font-size: 1.08rem;
+            line-height: 1.15;
+            color: var(--text-main);
+        }
+
+        .brand-text span {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            list-style: none;
+        }
+
+        .nav-links a,
+        .nav-links button.nav-btn {
+            background: none;
+            border: none;
+            font-family: inherit;
+            font-size: 0.98rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-decoration: none;
+            cursor: pointer;
+            padding: 6px 2px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover,
+        .nav-links button.nav-btn:hover {
+            color: var(--brand-blue);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .icon-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-soft);
+            color: var(--text-main);
+            cursor: pointer;
+            display: grid;
+            place-items: center;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+
+        .icon-btn:hover {
+            border-color: var(--brand-blue);
+        }
+
+        .btn-nav-outline {
+            padding: 8px 14px;
+            border-radius: 9px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-surface);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-nav-outline:hover {
+            border-color: var(--brand-blue);
+            color: var(--brand-blue);
+        }
+
+        .btn-nav-primary {
+            padding: 8px 16px;
+            border-radius: 9px;
+            background: var(--brand-red);
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.92rem;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .btn-nav-primary:hover {
+            background: var(--brand-red-hover);
+            transform: translateY(-1px);
+        }
+
+        .mobile-toggle {
+            display: none;
+        }
+
+        .mobile-drawer {
+            display: none;
+            background: var(--bg-surface);
+            border-top: 1px solid var(--border-color);
+            padding: 14px 20px 20px;
+        }
+
+        .mobile-drawer.open {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .mobile-drawer a,
+        .mobile-drawer button {
+            text-align: left;
+            background: none;
+            border: none;
+            border-bottom: 1px dashed var(--border-color);
+            font-family: inherit;
+            font-size: 1rem;
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 0;
+            cursor: pointer;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 28px 20px 60px;
+        }
+
+        .hero-card {
+            background: var(--hero-grad);
+            border: 1px solid var(--border-color);
+            border-radius: 22px;
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero-ribbon {
+            position: absolute;
+            top: 18px;
+            right: -36px;
+            background: var(--brand-red);
+            color: #fff;
+            font-size: 0.82rem;
+            font-weight: 700;
+            padding: 5px 44px;
+            transform: rotate(35deg);
+            box-shadow: 0 4px 12px rgba(217, 27, 36, 0.25);
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .hero-main {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 28px;
+            padding: 38px 36px 28px;
+            align-items: center;
+        }
+
+        .hero-org-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(11, 94, 215, 0.1);
+            color: var(--brand-blue);
+            border: 1px solid rgba(11, 94, 215, 0.25);
+            padding: 5px 14px;
+            border-radius: 999px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            margin-bottom: 14px;
+        }
+
+        body.dark-mode .hero-org-badge {
+            background: rgba(56, 189, 248, 0.14);
+            border-color: rgba(56, 189, 248, 0.35);
+        }
+
+        .hero-title {
+            font-size: 2.35rem;
+            font-weight: 800;
+            line-height: 1.22;
+            color: #0b4a9f;
+            margin-bottom: 10px;
+        }
+
+        body.dark-mode .hero-title {
+            color: #f8fafc;
+        }
+
+        .hero-cta-headline {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--brand-red);
+            text-decoration: none;
+            margin: 6px 0 14px;
+            padding: 4px 12px 4px 0;
+            transition: transform 0.2s;
+        }
+
+        .hero-cta-headline:hover {
+            transform: translateX(4px);
+            text-decoration: underline;
+        }
+
+        .hero-details-list {
+            list-style: none;
+            margin-bottom: 22px;
+        }
+
+        .hero-details-list li {
+            font-size: 1.06rem;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .hero-details-list strong {
+            color: var(--text-main);
+        }
+
+        .deadline-highlight {
+            color: var(--brand-red);
+            font-weight: 800;
+            font-size: 1.12rem;
+        }
+
+        .hero-btn-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn-primary-lg {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--brand-blue);
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            box-shadow: 0 8px 18px rgba(11, 94, 215, 0.25);
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .btn-primary-lg:hover {
+            background: var(--brand-blue-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-lg {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--bg-surface);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .btn-outline-lg:hover {
+            border-color: var(--brand-blue);
+            color: var(--brand-blue);
+            transform: translateY(-1px);
+        }
+
+        .hero-summary-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .hero-summary-card h3 {
+            font-size: 1.18rem;
+            color: var(--text-main);
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px dashed var(--border-color);
+            font-size: 0.96rem;
+        }
+
+        .summary-item:last-of-type {
+            border-bottom: none;
+        }
+
+        .summary-item span {
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .summary-item strong {
+            color: var(--text-main);
+            text-align: right;
+        }
+
+        .hero-bottom-strip {
+            background: var(--bg-surface);
+            border-top: 1px solid var(--border-color);
+            padding: 14px 28px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 14px;
+            font-size: 0.94rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .strip-dots {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .strip-dots span.dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--brand-red);
+            display: inline-block;
+        }
+
+        .helpline-pill {
+            background: var(--bg-soft);
+            border: 1px solid var(--border-color);
+            padding: 5px 14px;
+            border-radius: 999px;
+            color: var(--text-main);
+            font-weight: 700;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .stat-box {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 18px 16px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .stat-box strong {
+            display: block;
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: var(--brand-blue);
+            line-height: 1.2;
+        }
+
+        .stat-box span {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .section {
+            margin-top: 48px;
+        }
+
+        .section-head {
+            margin-bottom: 20px;
+        }
+
+        .section-head .eyebrow {
+            display: inline-block;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+            color: var(--brand-blue);
+            margin-bottom: 4px;
+        }
+
+        .section-head h2 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--text-main);
+        }
+
+        .section-head p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .cat-summary-bar {
+            background: var(--bg-surface);
+            border-left: 4px solid var(--brand-blue);
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 14px 18px;
+            border-radius: 12px;
+            margin-bottom: 18px;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .cat-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 26px;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .cat-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--brand-blue);
+        }
+
+        .cat-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            width: fit-content;
+        }
+
+        .badge-primary {
+            background: rgba(11, 94, 215, 0.12);
+            color: var(--brand-blue);
+        }
+
+        .badge-junior {
+            background: rgba(217, 119, 6, 0.14);
+            color: var(--brand-amber);
+        }
+
+        .cat-card h3 {
+            font-size: 1.38rem;
+            margin-bottom: 8px;
+        }
+
+        .cat-card p {
+            color: var(--text-secondary);
+            margin-bottom: 18px;
+        }
+
+        .syllabus-entry-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .syllabus-entry-text h3 {
+            font-size: 1.35rem;
+            margin-bottom: 6px;
+        }
+
+        .syllabus-entry-text p {
+            color: var(--text-secondary);
+            max-width: 650px;
+        }
+
+        .portal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(6px);
+            z-index: 1500;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 18px;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+
+        .portal-overlay.open {
+            display: flex;
+            opacity: 1;
+        }
+
+        .portal-window {
+            width: 100%;
+            max-width: 680px;
+            max-height: 90vh;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transform: translateY(14px) scale(0.98);
+            transition: transform 0.25s ease;
+        }
+
+        .portal-overlay.open .portal-window {
+            transform: translateY(0) scale(1);
+        }
+
+        .portal-topbar {
+            background: var(--bg-soft);
+            padding: 16px 22px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .portal-topbar-title strong {
+            display: block;
+            font-size: 1.15rem;
+            color: var(--text-main);
+        }
+
+        .portal-topbar-title span {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .portal-close-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-surface);
+            color: var(--text-main);
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: grid;
+            place-items: center;
+            transition: all 0.2s;
+        }
+
+        .portal-close-btn:hover {
+            border-color: var(--brand-red);
+            color: var(--brand-red);
+        }
+
+        .portal-body {
+            padding: 22px;
+            overflow-y: auto;
+        }
+
+        .portal-section-label {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 0.96rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .portal-pill-badge {
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 999px;
+            background: rgba(5, 150, 105, 0.14);
+            color: var(--brand-green);
+        }
+
+        .slim-tab-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .slim-tab-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            padding: 12px 16px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-soft);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .slim-tab-bar:hover {
+            background: rgba(11, 94, 215, 0.08);
+            border-color: var(--brand-blue);
+            transform: translateX(4px);
+        }
+
+        .slim-tab-bar.book-row:hover {
+            background: rgba(5, 150, 105, 0.08);
+            border-color: var(--brand-green);
+        }
+
+        .slim-tab-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 0;
+        }
+
+        .slim-tab-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 9px;
+            background: var(--brand-green);
+            color: #fff;
+            display: grid;
+            place-items: center;
+            font-size: 0.95rem;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .slim-tab-bar.qb-primary .slim-tab-icon {
+            background: var(--brand-blue);
+        }
+
+        .slim-tab-bar.qb-junior .slim-tab-icon {
+            background: var(--brand-amber);
+        }
+
+        .slim-tab-text strong {
+            display: block;
+            font-size: 1.02rem;
+            color: var(--text-main);
+            line-height: 1.25;
+        }
+
+        .slim-tab-text small {
+            display: block;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .slim-tab-action {
+            flex-shrink: 0;
+            font-size: 0.84rem;
+            font-weight: 700;
+            color: var(--brand-blue);
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            padding: 5px 12px;
+            border-radius: 999px;
+        }
+
+        .slim-tab-bar.book-row .slim-tab-action {
+            color: var(--brand-green);
+        }
+
+        .portal-divider {
+            margin: 18px 0;
+            border: 0;
+            border-top: 1px dashed var(--border-color);
+        }
+
+        .wps-helper-note {
+            margin-top: 16px;
+            padding: 12px 14px;
+            border-radius: 10px;
+            background: rgba(5, 150, 105, 0.09);
+            border: 1px dashed rgba(5, 150, 105, 0.4);
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+        }
+
+        .roadmap-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 16px;
+            margin-bottom: 22px;
+        }
+
+        .step-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .step-num {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: var(--brand-blue);
+            color: #fff;
+            display: grid;
+            place-items: center;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .step-card h4 {
+            font-size: 1.08rem;
+            margin-bottom: 6px;
+        }
+
+        .step-card p {
+            font-size: 0.94rem;
+            color: var(--text-secondary);
+        }
+
+        .notice-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-left: 5px solid var(--brand-amber);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .fb-join-box {
+            margin-top: 16px;
+            background: rgba(11, 94, 215, 0.08);
+            border: 1px solid rgba(11, 94, 215, 0.25);
+            border-radius: 12px;
+            padding: 16px 18px;
+        }
+
+        .fb-join-box a {
+            color: var(--brand-blue);
+            font-weight: 700;
+            word-break: break-all;
+        }
+
+        .update-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 18px;
+        }
+
+        .update-card {
+            background: var(--bg-surface);
+            border: 1px dashed var(--border-color);
+            border-radius: 14px;
+            padding: 20px;
+        }
+
+        .update-card h4 {
+            color: var(--brand-blue);
+            margin-bottom: 6px;
+        }
+
+        footer {
+            background: var(--bg-surface);
+            border-top: 1px solid var(--border-color);
+            padding: 40px 20px 24px;
+        }
+
+        .footer-inner {
+            max-width: 1180px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1.2fr;
+            gap: 28px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .footer-col h4 {
+            font-size: 1.05rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 6px;
+            color: var(--text-muted);
+            font-size: 0.94rem;
+        }
+
+        .footer-col a {
+            text-decoration: none;
+            color: var(--text-secondary);
+        }
+
+        .footer-col a:hover {
+            color: var(--brand-blue);
+        }
+
+        .copyright {
+            max-width: 1180px;
+            margin: 18px auto 0;
+            text-align: center;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 920px) {
+            .hero-main {
+                grid-template-columns: 1fr;
+                padding: 24px 20px;
+            }
+            .hero-title {
+                font-size: 1.85rem;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-inner {
+                grid-template-columns: 1fr;
+            }
+            .nav-links,
+            .btn-nav-outline {
+                display: none;
+            }
+            .mobile-toggle {
+                display: grid;
+            }
+            .slim-tab-bar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-inner">
+            <a href="#top" class="brand-logo">
+                <div class="brand-icon">SO</div>
+                <div class="brand-text">
+                    <strong>Science Olympiad</strong>
+                    <span>বিজ্ঞান উৎসব ২০২৬</span>
+                </div>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#top">হোম</a></li>
+                <li><a href="#categories">ক্যাটাগরি</a></li>
+                <li><button type="button" class="nav-btn" onclick="openSyllabusPortal('all')">সিলেবাস ও বই</button></li>
+                <li><a href="#registration">রেজিস্ট্রেশন প্রক্রিয়া</a></li>
+                <li><a href="#prizes">পুরস্কার ও আপডেট</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button type="button" class="icon-btn" id="themeToggleBtn" onclick="toggleTheme()" title="থিম পরিবর্তন করুন">🌙</button>
+                <a href="https://www.facebook.com/profile.php?id=61596762776855" target="_blank" rel="noopener noreferrer" class="btn-nav-outline">ফেসবুক পেজ</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfldm4U0aw1tUw6uSC9WpUgagiD3kBfcrxdNRq9FVN-2qGqIQ/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="btn-nav-primary">রেজিস্ট্রেশন</a>
+                <button type="button" class="icon-btn mobile-toggle" onclick="toggleMobileMenu()" aria-label="মেনু">☰</button>
+            </div>
+        </div>
+
+        <div id="mobileDrawer" class="mobile-drawer">
+            <a href="#top" onclick="toggleMobileMenu()">হোম</a>
+            <a href="#categories" onclick="toggleMobileMenu()">ক্যাটাগরি (২টি)</a>
+            <button type="button" onclick="toggleMobileMenu(); openSyllabusPortal('all');">সিলেবাস ও বোর্ড বই</button>
+            <a href="#registration" onclick="toggleMobileMenu()">রেজিস্ট্রেশন প্রক্রিয়া</a>
+            <a href="https://www.facebook.com/profile.php?id=61596762776855" target="_blank" rel="noopener noreferrer">আমাদের ফেসবুক পেজ</a>
+        </div>
+    </header>
+
+    <main id="top" class="container">
+
+        <section class="hero-card">
+            <div class="hero-ribbon">বিজ্ঞান শিখো, স্বপ্ন দেখো</div>
+
+            <div class="hero-main">
+                <div>
+                    <span class="hero-org-badge">🔬 বিজ্ঞান উৎসব ২০২৬ • Science Olympiad Competition</span>
+                    <h1 class="hero-title">সায়েন্স অলিম্পিয়াড কম্পিটিশন ২০২৬</h1>
+
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfldm4U0aw1tUw6uSC9WpUgagiD3kBfcrxdNRq9FVN-2qGqIQ/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="hero-cta-headline">
+                        রেজিস্ট্রেশন করতে ক্লিক করো &rarr;
+                    </a>
+
+                    <ul class="hero-details-list">
+                        <li>
+                            <strong>ক্যাটাগরি (মোট ২টি):</strong> প্রাইমারি ক্যাটাগরি (১ম – ৫ম শ্রেণি) এবং সেকেন্ডারি / জুনিয়র ক্যাটাগরি (৬ষ্ঠ – ১০ম শ্রেণি)।
+                        </li>
+                        <li>
+                            <strong>রেজিস্ট্রেশন চলবে:</strong> <span class="deadline-highlight">১লা জানুয়ারি – ১৮ই ফেব্রুয়ারি পর্যন্ত</span>
+                        </li>
+                        <li>
+                            <strong>পরীক্ষার সময়সূচি:</strong> ১৮ই ফেব্রুয়ারির পর যারা রেজিস্ট্রেশন করবে, অলিম্পিয়াড শুরু হওয়ার ঠিক <strong>১৫ দিন আগে</strong> তাদেরকে জানিয়ে দেওয়া হবে।
+                        </li>
+                    </ul>
+
+                    <div class="hero-btn-row">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfldm4U0aw1tUw6uSC9WpUgagiD3kBfcrxdNRq9FVN-2qGqIQ/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="btn-primary-lg">
+                            এখনই রেজিস্ট্রেশন করো
+                        </a>
+                        <button type="button" class="btn-outline-lg" onclick="openSyllabusPortal('all')">
+                            📚 সিলেবাস ও বোর্ড বই দেখুন
+                        </button>
+                    </div>
+                </div>
+
+                <div class="hero-summary-card">
+                    <h3>📌 একনজরে অলিম্পিয়াড তথ্য</h3>
+                    <div class="summary-item">
+                        <span>প্রতিযোগিতার নাম</span>
+                        <strong>Science Olympiad Competition</strong>
+                    </div>
+                    <div class="summary-item">
+                        <span>মোট ক্যাটাগরি</span>
+                        <strong>২টি (প্রাইমারি ও সেকেন্ডারি)</strong>
+                    </div>
+                    <div class="summary-item">
+                        <span>রেজিস্ট্রেশন শুরু</span>
+                        <strong>১লা জানুয়ারি</strong>
+                    </div>
+                    <div class="summary-item">
+                        <span>রেজিস্ট্রেশন শেষ</span>
+                        <strong>১৮ই ফেব্রুয়ারি</strong>
+                    </div>
+                    <div class="summary-item">
+                        <span>হেল্পলাইন (সেন্ড মানি)</span>
+                        <strong>01714906171</strong>
+                    </div>
+                    <div class="summary-item">
+                        <span>অফিশিয়াল আপডেট</span>
+                        <strong><a href="https://www.facebook.com/profile.php?id=61596762776855" target="_blank" rel="noopener noreferrer" style="color: var(--brand-blue); text-decoration: none;">ফেসবুক পেজ &nearr;</a></strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-bottom-strip">
+                <div class="strip-dots">
+                    <span>অনলাইন রেজিস্ট্রেশন</span>
+                    <span class="dot"></span>
+                    <span>ইমেইলে চূড়ান্ত কনফার্মেশন</span>
+                    <span class="dot"></span>
+                    <span>১৫ দিন আগে পরীক্ষার ঘোষণা</span>
+                </div>
+                <div class="helpline-pill">
+                    📞 প্রয়োজনে: 01714906171 (সেন্ড মানি করে রেজিস্ট্রেশন ফি জমা দিন)
+                </div>
+            </div>
+        </section>
+
+        <div class="stats-grid">
+            <div class="stat-box">
+                <strong>২টি</strong>
+                <span>প্রতিযোগিতার ক্যাটাগরি</span>
+            </div>
+            <div class="stat-box">
+                <strong>৩য় – ১০ম</strong>
+                <span>সম্পূর্ণ বোর্ড বই সংযুক্ত</span>
+            </div>
+            <div class="stat-box">
+                <strong>১৫ দিন আগে</strong>
+                <span>পরীক্ষার সূচি ঘোষণা</span>
+            </div>
+            <div class="stat-box">
+                <strong>১৮ই ফেব্রুয়ারি</strong>
+                <span>রেজিস্ট্রেশনের শেষ তারিখ</span>
+            </div>
+        </div>
+
+        <section id="categories" class="section">
+            <div class="section-head">
+                <span class="eyebrow">প্রতিযোগিতার স্তর</span>
+                <h2>ক্যাটাগরি কয়টি ও কী কী?</h2>
+                <p>যেকোনো ক্যাটাগরিতে প্রবেশ করলে শ্রেণি অনুযায়ী নিচে নিচে সম্পূর্ণ বোর্ড বই এবং কোশ্চেন ব্যাংক দেখতে পাবে।</p>
+            </div>
+
+            <div class="cat-summary-bar">
+                এই প্রতিযোগিতায় মোট <strong>২টি ক্যাটাগরি</strong> রয়েছে: ১) <strong>প্রাইমারি ক্যাটাগরি</strong> (১ম – ৫ম শ্রেণি) এবং ২) <strong>সেকেন্ডারি / জুনিয়র ক্যাটাগরি</strong> (৬ষ্ঠ – ১০ম শ্রেণি)।
+            </div>
+
+            <div class="grid-2">
+                <div class="cat-card">
+                    <div>
+                        <span class="cat-badge badge-primary">ক্যাটাগরি ০১ • ১ম – ৫ম শ্রেণি</span>
+                        <h3>প্রাইমারি ক্যাটাগরি</h3>
+                        <p>এখানে ঢুকলে প্রথমেই নিচে নিচে ৩য় শ্রেণি, ৪র্থ শ্রেণি এবং ৫ম শ্রেণির সম্পূর্ণ বোর্ড বই ও প্রাইমারি কোশ্চেন ব্যাংক দেখতে পাবে।</p>
+                    </div>
+                    <button type="button" class="btn-outline-lg" onclick="openSyllabusPortal('primary')">
+                        প্রাইমারি ক্যাটাগরি ও বোর্ড বই দেখুন &rarr;
+                    </button>
+                </div>
+
+                <div class="cat-card">
+                    <div>
+                        <span class="cat-badge badge-junior">ক্যাটাগরি ০২ • ৬ষ্ঠ – ১০ম শ্রেণি</span>
+                        <h3>সেকেন্ডারি / জুনিয়র ক্যাটাগরি</h3>
+                        <p>এখানে ঢুকলে নিচে নিচে ৬ষ্ঠ শ্রেণি, ৭ম শ্রেণি, ৮ম শ্রেণি এবং ৯ম–১০ম শ্রেণির সম্পূর্ণ বোর্ড বই ও কোশ্চেন ব্যাংক দেখতে পাবে।</p>
+                    </div>
+                    <button type="button" class="btn-outline-lg" onclick="openSyllabusPortal('secondary')">
+                        সেকেন্ডারি ক্যাটাগরি ও বোর্ড বই দেখুন &rarr;
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="syllabus" class="section">
+            <div class="section-head">
+                <span class="eyebrow">প্রস্তুতি ও পড়াশোনা</span>
+                <h2>সিলেবাস, বোর্ড বই ও কোশ্চেন ব্যাংক পোর্টাল</h2>
+                <p>শ্রেণি অনুযায়ী সবগুলো বোর্ড বই এবং কোশ্চেন ব্যাংক পেতে নিচের বাটনে ক্লিক করো।</p>
+            </div>
+
+            <div class="syllabus-entry-card">
+                <div class="syllabus-entry-text">
+                    <h3>📚 অলিম্পিয়াডের সম্পূর্ণ বোর্ড বই (৩য় – ১০ম শ্রেণি) ও কোশ্চেন ব্যাংক</h3>
+                    <p>
+                        প্রাইমারি ক্যাটাগরিতে ৩য়, ৪র্থ ও ৫ম শ্রেণির বই এবং সেকেন্ডারি ক্যাটাগরিতে ৬ষ্ঠ, ৭ম, ৮ম ও ৯ম–১০ম শ্রেণির সম্পূর্ণ বোর্ড বই পরপর সাজানো আছে।
+                    </p>
+                </div>
+                <button type="button" class="btn-primary-lg" onclick="openSyllabusPortal('all')">
+                    সিলেবাস ও বই দেখুন &rarr;
+                </button>
+            </div>
+        </section>
+
+        <section id="registration" class="section">
+            <div class="section-head">
+                <span class="eyebrow">অংশগ্রহণের নিয়ম</span>
+                <h2>রেজিস্ট্রেশন প্রক্রিয়া ও সময়সূচি</h2>
+            </div>
+
+            <div class="roadmap-grid">
+                <div class="step-card">
+                    <div class="step-num">১</div>
+                    <h4>অনলাইন ফর্ম পূরণ</h4>
+                    <p>১লা জানুয়ারি থেকে ১৮ই ফেব্রুয়ারির মধ্যে গুগল ফর্মের মাধ্যমে তোমার সঠিক তথ্য দিয়ে রেজিস্ট্রেশন সম্পন্ন করো।</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">২</div>
+                    <h4>ফি জমা (সেন্ড মানি)</h4>
+                    <p>প্রয়োজনে <strong>01714906171</strong> নম্বরে সেন্ড মানি করে রেজিস্ট্রেশন ফি জমা দাও এবং ট্রানজেকশন তথ্য সংরক্ষণ করো।</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">৩</div>
+                    <h4>ইমেইলে কনফার্মেশন</h4>
+                    <p>আপনার রেজিস্ট্রেশন সম্পন্ন হলে এবং রেজিস্ট্রেশন চূড়ান্ত হলে ইমেইলের মাধ্যমে তা আপনাকে পাঠিয়ে দেওয়া হবে।</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">৪</div>
+                    <h4>১৫ দিন আগে পরীক্ষার নোটিশ</h4>
+                    <p>১৮ই ফেব্রুয়ারির পর যারা রেজিস্ট্রেশন করবে, অলিম্পিয়াড শুরু হওয়ার ঠিক ১৫ দিন আগে তাদেরকে জানিয়ে দেওয়া হবে।</p>
+                </div>
+            </div>
+
+            <div class="notice-card">
+                <p style="font-size: 1.06rem; margin-bottom: 10px;">
+                    <strong>📌 গুরুত্বপূর্ণ নির্দেশনা:</strong> আপনার রেজিস্ট্রেশন সম্পন্ন হলে এবং রেজিস্ট্রেশন চূড়ান্ত হলে ইমেইলের মাধ্যমে তা আপনাকে পাঠিয়ে দেওয়া হবে। নিয়মিত ইমেইল ইনবক্স ও স্প্যাম ফোল্ডার চেক করুন।
+                </p>
+
+                <div style="margin: 14px 0;">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfldm4U0aw1tUw6uSC9WpUgagiD3kBfcrxdNRq9FVN-2qGqIQ/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="btn-primary-lg">
+                        রেজিস্ট্রেশন ফর্ম ওপেন করো &rarr;
+                    </a>
+                </div>
+
+                <div class="fb-join-box">
+                    <p style="margin-bottom: 4px;">
+                        আমাদের সর্বশেষ আপডেট ও ঘোষণা পেতে নিচের লিংকে ক্লিক করে ফেসবুক পেজে যুক্ত হতে পারেন:
+                    </p>
+                    <p style="margin-bottom: 0;">
+                        আমাদের ফেসবুক পেজে জয়েন করুন:
+                        <a href="https://www.facebook.com/profile.php?id=61596762776855" target="_blank" rel="noopener noreferrer">
+                            https://www.facebook.com/profile.php?id=61596762776855
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="prizes" class="section">
+            <div class="section-head">
+                <span class="eyebrow">নোটিশ ও ঘোষণা</span>
+                <h2>পুরস্কার ও পরবর্তী আপডেট</h2>
+            </div>
+
+            <div class="update-grid">
+                <div class="update-card">
+                    <h4>🏆 পুরস্কার ও সনদপত্র</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.96rem;">
+                        উভয় ক্যাটাগরির সেরা বিজয়ীদের জন্য বিশেষ পুরস্কার, মেডেল ও সার্টিফিকেটের বিস্তারিত তালিকা খুব শীঘ্রই প্রকাশ করা হবে।
+                    </p>
+                </div>
+                <div class="update-card">
+                    <h4>🗓️ পরীক্ষার চূড়ান্ত তারিখ</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.96rem;">
+                        ১৮ই ফেব্রুয়ারি রেজিস্ট্রেশন শেষ হওয়ার পর অলিম্পিয়াড শুরু হওয়ার ১৫ দিন আগে নিবন্ধিত সবাইকে পরীক্ষার তারিখ ও সময় জানিয়ে দেওয়া হবে।
+                    </p>
+                </div>
+                <div class="update-card">
+                    <h4>📘 সম্পূর্ণ বোর্ড বই প্রস্তুতি</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.96rem;">
+                        প্রাইমারি (৩য়–৫ম) ও সেকেন্ডারি (৬ষ্ঠ–১০ম) ক্যাটাগরির ভেতর থেকে সম্পূর্ণ বোর্ড বই খুলে নিয়মিত অনুশীলন করো।
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== সিলেবাস ও ক্যাটাগরি বোর্ড বই পোর্টাল মডাল ===== -->
+    <div id="syllabusPortalModal" class="portal-overlay" role="dialog" aria-modal="true" aria-labelledby="portalTitle" onclick="handleOverlayClick(event)">
+        <div class="portal-window">
+            <div class="portal-topbar">
+                <div class="portal-topbar-title">
+                    <strong id="portalTitle">সিলেবাস ও সম্পূর্ণ বোর্ড বই পোর্টাল</strong>
+                    <span id="portalSubtitle">তোমার শ্রেণি অনুযায়ী নিচের বই বা কোশ্চেন ব্যাংক ওপেন করো</span>
+                </div>
+                <button type="button" class="portal-close-btn" onclick="closeSyllabusPortal()" aria-label="বন্ধ করুন">&times;</button>
+            </div>
+
+            <div class="portal-body">
+                <!-- ১. প্রাইমারি ক্যাটাগরির সম্পূর্ণ বোর্ড বই (৩য়, ৪র্থ, ৫ম) -->
+                <div id="primaryBooksWrapper">
+                    <div class="portal-section-label">
+                        <span>📖 প্রাইমারি ক্যাটাগরি: সম্পূর্ণ বোর্ড বই</span>
+                        <span class="portal-pill-badge">৩য় – ৫ম শ্রেণি</span>
+                    </div>
+
+                    <div class="slim-tab-stack">
+                        <a id="bookClass3" href="#" target="_blank" rel="noopener noreferrer" class="slim-tab-bar book-row">
+                            <div class="slim-tab-left">
+                                <div class="slim-tab-icon">৩য়</div>
+                                <div class="slim-tab-text">
+                                    <strong>৩য় শ্রেণি — সম্পূর্ণ বোর্ড বই (Class 3)</strong>
+                                    <small>প্রাইমারি ক্যাটাগরি • Google Drive PDF</small>
+                                </div>
+                            </div>
+                            <span class="slim-tab-action">বই দেখুন &nearr;</span>
+                        </a>
+
+                        <a id="bookClass4" href="#" target="_blank" rel="noopener noreferrer" class="slim-tab-bar book-row">
+                            <div class="slim-tab-left">
+                                <div class="slim-tab-icon">৪র্থ</div>
+                                <div class="slim-tab-text">
+                                    <strong>৪র্থ শ্রেণি — সম্পূর্ণ বোর্ড বই (Class 4)</strong>
+                                    <small>প্রাইমারি ক্যাটাগরি • Google Drive PDF</small>
+                                </div>
+                            </div>
+                            <span class="slim-tab-action">বই দেখুন &nearr;</span>
+                        </a>
+
+                        <a id="bookClass5" href="#" target="_blank" rel="noopener noreferrer" class="slim-tab-bar book-row">
+                            <div class="slim-tab-left">
+                                <div class="slim-tab-icon">৫ম</div>
+                                <div class="slim-tab-text">
+                                    <strong>৫ম শ্রেণি — সম্পূর্ণ বোর্ড বই (Class 5)</strong>
+                                    <small>প্রাইমারি ক্যাটাগরি • Google Drive PDF</small>
+                                </div>
+                            </div>
+                            <span class="slim-tab-action">বই দেখুন &nearr;</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ২. সেকেন্ডারি ক্যাটাগরির সম্পূর্ণ বোর্ড বই (৬ষ্ঠ, ৭ম, ৮ম, ৯ম-১০ম) -->
+                <div id="secondaryBooksWrapper" style="margin-top: 16px;">
+                    <div class="portal-section-label">
+                        <span>📕 সেকেন্ডারি ক্যাটাগরি: সম্পূর্ণ বোর্ড বই</span>
+                        <span class="portal-pill-badge">৬ষ্ঠ – ১০ম শ্রেণি</span>
+                    </div>
+
+                    <div class="slim-tab-stack">
+                        <a id="bookClass6" href="#" target="_blank" rel="noopener noreferrer" class="slim-tab-bar book-row">
+                            <div class="slim-tab-left">
+                                <div class="slim-tab-icon">৬ষ্ঠ</div>
+                                <div class="slim-tab-text">
+                                    <strong>৬ষ্ঠ শ্রেণি — সম্পূর্ণ বোর্ড বই (Class 6)</strong>
+                                    <small>সেকেন্ডারি ক্যাটাগরি • Google Drive PDF</small>
+                                </div>
+                            </div>
+                            <span class="slim-tab-action">বই দেখুন &nearr;</span>
+                        </a>
+
+                        <a id="bookClass7" href="#" target="_blank" rel="noopener noreferrer" class="slim-tab-bar book-row">
+                            <div class="slim-tab-left">
+                                <div class="slim-tab-icon">৭ম</div>
+                                <div class="slim-tab-text">
+                                    <strong>৭ম শ্রেণি — সম্পূর্ণ বোর্ড বই (Class 7)</strong>
+                                    <small>সেকেন্ডারি ক্যাটাগরি • Google Drive PDF</small>
+                                </div>
+                            </div>
+                            <span class="slim-tab-action">বই দেখুন &nearr;</span>
+                        </a>
+
+                        <a id="bookClass8" href="#" target="_blank" rel="noopener noreferrer" class="slim-tab-bar book-row">
+                            <div class="slim-tab-left">
+                                <div class="slim-tab-icon">৮ম</div>
+                                <div class="slim-tab-text">
+                                    <strong>৮ম শ্রেণি — সম্পূর্ণ বোর্ড বই (Class 8)</strong>
+                                    <small>সেকেন্ডারি ক্যাটাগরি • Google Drive PDF</small>
+                                </div>
+                            </div>
+                            <span class="slim-tab-action">বই দেখুন &nearr;</span>
+                        </a>
+
+                        <a id="bookClass9" href="#" target="_blank" rel="noopener noreferrer" class="slim-tab-bar book-row">
+                            <div class="slim-tab-left">
+                                <div class="slim-tab-icon">৯–১০</div>
+                                <div class="slim-tab-text">
+                                    <strong>৯ম–১০ম শ্রেণি — সম্পূর্ণ বোর্ড বই (Class 9–10)</strong>
+                                    <small>সেকেন্ডারি ক্যাটাগরি • Google Drive PDF</small>
+                                </div>
+                            </div>
+                            <span class="slim-tab-action">বই দেখুন &nearr;</span>
+                        </a>
+                    </div>
+                </div>
+
+                <hr class="portal-divider">
+
+                <!-- ৩. কোশ্চেন ব্যাংক ট্যাব বারসমূহ -->
+                <div class="portal-section-label">
+                    <span>📝 সায়েন্স অলিম্পিয়াড কোশ্চেন ব্যাংক</span>
+                </div>
+
+                <div class="slim-tab-stack">
+                    <a id="qbLinkPrimary" href="#" target="_blank" rel="noopener noreferrer" class="slim-tab-bar qb-primary">
+                        <div class="slim-tab-left">
+                            <div class="slim-tab-icon">📄</div>
+                            <div class="slim-tab-text">
+                                <strong>সায়েন্স অলিম্পিয়াড কোশ্চেন ব্যাংক (১ম – ৫ম শ্রেণি)</strong>
+                                <small>প্রাইমারি ক্যাটাগরি • প্রশ্নব্যাংক লিংক</small>
+                            </div>
+                        </div>
+                        <span class="slim-tab-action">ওপেন করুন &nearr;</span>
+                    </a>
+
+                    <a id="qbLinkJunior" href="#" target="_blank" rel="noopener noreferrer" class="slim-tab-bar qb-junior">
+                        <div class="slim-tab-left">
+                            <div class="slim-tab-icon">📘</div>
+                            <div class="slim-tab-text">
+                                <strong>সায়েন্স অলিম্পিয়াড কোশ্চেন ব্যাংক (৬ষ্ঠ – ১০ম+ শ্রেণি)</strong>
+                                <small>সেকেন্ডারি / জুনিয়র ক্যাটাগরি • প্রশ্নব্যাংক লিংক</small>
+                            </div>
+                        </div>
+                        <span class="slim-tab-action">ওপেন করুন &nearr;</span>
+                    </a>
+                </div>
+
+                <div class="wps-helper-note">
+                    <strong>টিপস:</strong> ফাইল খুললে ডাউনলোড করে বা "Open with" থেকে <strong>WPS Office</strong> বেছে নিলে WPS Office-এ পড়তে পারবে।
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-col">
+                <h4>Science Olympiad Competition 2026</h4>
+                <p style="color: var(--text-muted); font-size: 0.94rem;">
+                    প্রাইমারি (১ম – ৫ম শ্রেণি) ও সেকেন্ডারি / জুনিয়র (৬ষ্ঠ – ১০ম শ্রেণি) শিক্ষার্থীদের বিজ্ঞান ও যুক্তিচর্চায় উৎসাহিত করার লক্ষ্যে আয়োজিত।
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>গুরুত্বপূর্ণ লিংক</h4>
+                <ul>
+                    <li><a href="#top">হোম</a></li>
+                    <li><a href="#categories">ক্যাটাগরি (২টি)</a></li>
+                    <li><a href="#syllabus" onclick="openSyllabusPortal('all'); return false;">সিলেবাস ও বোর্ড বই</a></li>
+                    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfldm4U0aw1tUw6uSC9WpUgagiD3kBfcrxdNRq9FVN-2qGqIQ/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">রেজিস্ট্রেশন ফর্ম</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>যোগাযোগ ও আপডেট</h4>
+                <ul>
+                    <li>হেল্পলাইন (সেন্ড মানি): <strong>01714906171</strong></li>
+                    <li>ইমেইল কনফার্মেশন: রেজিস্ট্রেশন চূড়ান্ত হলে পাঠানো হবে</li>
+                    <li>ফেসবুক: <a href="https://www.facebook.com/profile.php?id=61596762776855" target="_blank" rel="noopener noreferrer">অফিশিয়াল পেজ ভিজিট করুন</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Science Olympiad Competition | সর্বস্বত্ব সংরক্ষিত
+        </div>
+    </footer>
+
+    <script>
+        /* =====================================================================
+           ১. সম্পূর্ণ বোর্ড বইয়ের লিংকসমূহ (Primary: ৩য়-৫ম, Secondary: ৬ষ্ঠ-১০ম)
+           ===================================================================== */
+        const BOARD_BOOKS = {
+            class3: "https://drive.google.com/file/d/1jn-X5lOgECnoypp29eYtYAw_DHZ9qhm6/view",
+            class4: "https://drive.google.com/file/d/1c4IxTVZLnNXnI1t2aCWSKWuHCxT988NL/view",
+            class5: "https://drive.google.com/file/d/14ejrQyTTMfy5JDPDcnPOcekBAn1b9Kdf/view",
+            class6: "https://drive.google.com/file/d/10DVauOWIN6gPmKKjd-rxRPVLLyolBcJD/view",
+            class7: "https://drive.google.com/file/d/1qBff8MLDQdilreUecN2cElXRoJnlQMW_/view",
+            class8: "https://drive.google.com/file/d/13Ms7Jse6GAssepHFewohlp_ioc-UuyjH/view",
+            class9: "https://drive.google.com/file/d/1AYg7uY_WjVYJmoskhb0-D58iFPvgwmpJ/view"
+        };
+
+        /* =====================================================================
+           ২. কোশ্চেন ব্যাংক PDF লিংকসমূহ (নতুন লিংক দিতে চাইলে এখানে বসাবে)
+           ===================================================================== */
+        const NEW_PDF_LINKS = {
+            primaryOneToFive: "",
+            juniorSixToTenPlus: ""
+        };
+
+        const DEFAULT_PDF_LINKS = {
+            primaryOneToFive: "https://acrobat.adobe.com/id/urn:aaid:sc:AP:6bc2275f-9b17-4420-a67a-e3b8aa66feb9",
+            juniorSixToTenPlus: "https://acrobat.adobe.com/id/urn:aaid:sc:AP:c73d91b7-ebaf-4c36-8181-38f7cc2334cc"
+        };
+
+        function applyAllLinks() {
+            document.getElementById("bookClass3").href = BOARD_BOOKS.class3;
+            document.getElementById("bookClass4").href = BOARD_BOOKS.class4;
+            document.getElementById("bookClass5").href = BOARD_BOOKS.class5;
+            document.getElementById("bookClass6").href = BOARD_BOOKS.class6;
+            document.getElementById("bookClass7").href = BOARD_BOOKS.class7;
+            document.getElementById("bookClass8").href = BOARD_BOOKS.class8;
+            document.getElementById("bookClass9").href = BOARD_BOOKS.class9;
+
+            const pCustom = (NEW_PDF_LINKS.primaryOneToFive || "").trim();
+            const jCustom = (NEW_PDF_LINKS.juniorSixToTenPlus || "").trim();
+
+            document.getElementById("qbLinkPrimary").href = pCustom || DEFAULT_PDF_LINKS.primaryOneToFive;
+            document.getElementById("qbLinkJunior").href = jCustom || DEFAULT_PDF_LINKS.juniorSixToTenPlus;
+        }
+
+        applyAllLinks();
+
+        function toggleTheme() {
+            document.body.classList.toggle("dark-mode");
+            const btn = document.getElementById("themeToggleBtn");
+            btn.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById("mobileDrawer").classList.toggle("open");
+        }
+
+        function openSyllabusPortal(selectedCategory = "all") {
+            applyAllLinks();
+
+            const primaryWrap = document.getElementById("primaryBooksWrapper");
+            const secondaryWrap = document.getElementById("secondaryBooksWrapper");
+            const qbPrimary = document.getElementById("qbLinkPrimary");
+            const qbJunior = document.getElementById("qbLinkJunior");
+            const titleEl = document.getElementById("portalTitle");
+            const subEl = document.getElementById("portalSubtitle");
+
+            if (selectedCategory === "primary") {
+                titleEl.textContent = "প্রাইমারি ক্যাটাগরি (৩য় – ৫ম শ্রেণি)";
+                subEl.textContent = "নিচে নিচে ৩য়, ৪র্থ ও ৫ম শ্রেণির সম্পূর্ণ বোর্ড বই ও কোশ্চেন ব্যাংক";
+                primaryWrap.style.display = "block";
+                secondaryWrap.style.display = "none";
+                qbPrimary.style.display = "flex";
+                qbJunior.style.display = "none";
+            } else if (selectedCategory === "secondary") {
+                titleEl.textContent = "সেকেন্ডারি ক্যাটাগরি (৬ষ্ঠ – ১০ম শ্রেণি)";
+                subEl.textContent = "নিচে নিচে ৬ষ্ঠ, ৭ম, ৮ম ও ৯ম–১০ম শ্রেণির সম্পূর্ণ বোর্ড বই ও কোশ্চেন ব্যাংক";
+                primaryWrap.style.display = "none";
+                secondaryWrap.style.display = "block";
+                secondaryWrap.style.marginTop = "0";
+                qbPrimary.style.display = "none";
+                qbJunior.style.display = "flex";
+            } else {
+                titleEl.textContent = "সিলেবাস ও সম্পূর্ণ বোর্ড বই পোর্টাল";
+                subEl.textContent = "প্রাইমারি (৩য়–৫ম) ও সেকেন্ডারি (৬ষ্ঠ–১০ম) সম্পূর্ণ বোর্ড বই এবং কোশ্চেন ব্যাংক";
+                primaryWrap.style.display = "block";
+                secondaryWrap.style.display = "block";
+                secondaryWrap.style.marginTop = "16px";
+                qbPrimary.style.display = "flex";
+                qbJunior.style.display = "flex";
+            }
+
+            const modal = document.getElementById("syllabusPortalModal");
+            modal.classList.add("open");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeSyllabusPortal() {
+            const modal = document.getElementById("syllabusPortalModal");
+            modal.classList.remove("open");
+            document.body.style.overflow = "";
+        }
+
+        function handleOverlayClick(event) {
+            if (event.target.id === "syllabusPortalModal") {
+                closeSyllabusPortal();
+            }
+        }
+
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+                closeSyllabusPortal();
+            }
+        });
+    </script>
+
+</body>
+</html>
